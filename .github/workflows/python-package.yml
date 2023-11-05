@@ -4,8 +4,9 @@
 name: Python package
 
 on:
-  push:
-    branches: [ "main" ]
+# only pull request should be fine with the rule i set...
+#  push:
+#    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
