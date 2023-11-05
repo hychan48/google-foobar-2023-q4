@@ -1,4 +1,5 @@
 """
+Python 3.11 instead of 2.7. should be okay based on simplicity of the code.
 Quick and dirty. O(sqrt(n)) time complexity. worst case O(n*sqrt(n)) time complexity.
 < 200 length. so its negligible
 https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q1/src/solution.py
