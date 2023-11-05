@@ -1,28 +1,53 @@
 # Don't Get Volunteered
 ## Question Summarized
-```txt
-Create a function `solution(s)` to divide a cake with a circular sequence of M&Ms into equal parts.
-Each of `s`'s characters (a-z) represents a different color M&M. 
-The string represents the order of M&Ms, and the goal is to cut the cake into as many equal slices as possible, 
-with each slice having the same sequence of M&Ms without leftovers. 
+```md
+Create a function named solution(src, dest)
+to calculate the minimum number of moves a **Knight** - in a game of Chess -
+must make to travel from one square to another on a chessboard? 
 
-The input `s` is a non-empty string with a maximum length of 200 characters. 
-Return the maximum number of equal slices that can be made.
+The squares are numbered from 0 to 63, like a standard chessboard. 
+Knight moves two squares in any direction immediately followed by one square perpendicular to that direction, 
+or vice versa, in an "L" shape).
+
+Shown in the appendix
 ```
-
 ## Solution Summarized
 
+[//]: # (todo)
 ## Expected Values
+```txt
+-- Python cases --
+Input:
+solution.solution(19, 36)
+Output:
+    1
 
-
+Input:
+solution.solution(0, 1)
+Output:
+    3
+```
+### Knight's Tour Solution
+* https://www.maths-resources.com/knights/
+![solution-1_19-to-36-in-1.png](raw%2Fknight-tour-solution-1.png)
+![solution-2_0-to-1-in-3.png](raw%2Fknight-tour-solution-2.png)
 ## Keywords
-
+<!-- if applicable for question / expected value -->
 ## Solution
 
 
+# Initial thoughts
+* Interesting question to animate. However, let's just get it done
+  * Like the Knight's Tour problem animation.
+  * [Interactive Knight's Tour](https://www.maths-resources.com/knights/)
+  * 
+* Good ol brute force? Dynamic programming? or greedy?
+  * Challenge is to guarantee the minimum number of moves
+* Python 3.11.6 should be backwards compatible with 2.7 for this question. Based on previous experience.
+  * Can be optimized by using @mnemonic decorator
+    * However, support was dropped for 2.7 since it's deprecated amost 4 years ago in 2020
+
 # Appendix
-
-
 ## Raw Question
 * levels/q1/raw/q1_readme.txt.html
 <!-- Had to convert to txt... html tag on GitHub didn't format properly -->
