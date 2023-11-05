@@ -27,10 +27,14 @@ pnpm run test:q1
 # Quick Checklist
 - [ ] Documentation
   - Save Original Question
-    - /api/v1/files/ (.json)
+    - [ ] /api/v1/files/ (.json)
+    - [ ] convert to .yaml and .html
   - Reword Question and Keywords
+    - [ ] readme_q.template.md
   - Principles
     - TDD
+    - Quick and dirty
+      - Unless the question piques my research interest
   - Priorities
   - [ ] JSDoc @typedef but for Python 
   - [ ] Metadata
@@ -43,9 +47,6 @@ pnpm run test:q1
   - [ ] Workflow with GitHub actions
     - Lint - Flake8
     - Unit Tests - PyTest
-
-
-
 
 # dev setup
 ```powershell
