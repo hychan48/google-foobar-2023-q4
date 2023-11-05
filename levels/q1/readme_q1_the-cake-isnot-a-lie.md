@@ -1,5 +1,5 @@
 # Cake no lie
-## Question 
+## Question Summarized
 ```txt
 Create a function `solution(s)` to divide a cake with a circular sequence of M&Ms into equal parts.
 Each of `s`'s characters (a-z) represents a different color M&M. 
@@ -50,10 +50,9 @@ python -m pytest levels/q1/tests/solutions_test.py # python 3.11 soln
 
 
 # Appendix
-* ignored constraints
+* ignored constrai``nts
 * remember when verify / submit check the api
-* [/api/v1/files/
-](https://foobar.withgoogle.com/api/v1/files/)
+* [/api/v1/files/](https://foobar.withgoogle.com/api/v1/files/)
 * copied to /raw/v1.files.json
 * copied to /raw/v1.files.yaml
 
