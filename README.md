@@ -10,4 +10,23 @@
 # dev setup
 ```bash
 pnpm i
+# haha didnt work:
+conda create -n foobar-py27 python=2.7
+conda create -n google-foorbar-2023-q4 python=3.11
+
+conda activate google-foorbar-2023-q4
+
+# update pipx
+pipx --version
+python -m pip install --user pipx
+python -m pipx ensurepath
+
+pipx install poetry
+poetry --version
+poetry init
+```
+
+## poetry
+```bash
+
 ```

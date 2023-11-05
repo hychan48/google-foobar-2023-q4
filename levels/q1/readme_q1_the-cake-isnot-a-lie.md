@@ -67,3 +67,5 @@ pnpm run test:q1
 ```
 # env
 * probably use mamba/conda for python 2.7
+* didnt work... let's just use 3.11 with conda first
+* 
