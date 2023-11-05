@@ -17,34 +17,60 @@ function writeToFile(fileName,data,space=2){
   );
 }
 
+
 /**
- * Quick and dirty solution
- * < 200 characters so shouldnt be an issue
+ * solution level 1 - js version
+ * @param strInput {string} Sequence of characters a-z. max length is 200 chars
+ * @returns {number}
+ * @example
+ * returns 1 if no exact repeated pattern are found
+ * @description
+ * returns the maximum number of equal parts that can be cut from the cake without leaving any leftovers.
+ *
+ * Quick and dirty solution:
+ * < 200 characters so shouldn't be an issue
  * O(sqrt(n)) time complexity
  * O(n*sqrt(n)) worst time complexity
  */
-function solution(s) {
-  const L = s.length;
+function solution(strInput) {
+  /** @type {number} Length - max 200 */
+  const inputLength = strInput.length;
+  if (inputLength > 200) {
+    throw new Error('String length must be less than 200');
+  }
 
-  // Helper function to check if the string can be divided into equal parts of a given length
-  function canDivide(length) {
-    const pattern = s.substring(0, length);
-    for (let i = length; i < L; i += length) {
-      if (s.substring(i, i + length) !== pattern) {
+  /**
+   * solution.canDivide
+   * @param windowSlidingLength {number}
+   * @returns {boolean}
+    Helper function to check if the string can be divided into equal parts of a given length
+   */
+  function canDivide(windowSlidingLength) {
+    /** @type {string} - Current reference pattern of sliding window */
+    const pattern = strInput.substring(0, windowSlidingLength);
+    /* Iterate over all windows of length L */
+    for (let i = windowSlidingLength; i < inputLength; i += windowSlidingLength) {
+      /* early exit if not found */
+      if (strInput.substring(i, i + windowSlidingLength) !== pattern) {
         return false;
       }
     }
     return true;
   }
 
-  // Iterate over all divisors of L
-  for (let d = 1; d <= Math.floor(L / 2); d++) {
-    if (L % d === 0 && canDivide(d)) {
-      return L / d;
+  /* Iterate over all divisors of inputLength L */
+  for (let d = 1; d <= Math.floor(inputLength / 2); d++) {
+    /* If L is divisible by d and */
+    if (inputLength % d === 0 && canDivide(d)) {
+      /* i.e. 12/6 = 2. inputLength / patternLength = partLength */
+      // console.log(inputLength,d,inputLength / d);
+      /* convert to answer's format, i.e. number of equal parts */
+      return inputLength / d;
     }
   }
 
-  return 1; // If no pattern is found, you can only cut the cake into 1 part
+  /* Else : no pattern is found, you can only cut the cake into 1 part */
+  return 1;
 }
 
 /**

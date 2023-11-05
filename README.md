@@ -17,4 +17,32 @@ python -m pytest levels/q1/tests/solutions_test.py
 # dev setup
 ```bash
 pnpm i
+# haha didnt work:
+conda create -n foobar-py27 python=2.7
+conda create -n google-foorbar-2023-q4 python=3.11
+
+conda activate google-foorbar-2023-q4
+
+# update pipx
+pipx --version
+python -m pip install --user pipx
+python -m pipx ensurepath
+
+# might not be needed after all...
+pipx install poetry
+poetry --version
+poetry init
+
+# poetry might not be needed after all...
+poetry add pytest --group dev
+#poetry shell
+# 3.11.4 vs 3.11.6... interesting
+```
+
+### Install pytest
+```bash
+conda activate google-foorbar-2023-q4
+python -m pip install pytest
+
+python -m pip install -r requirements.txt
 ```
