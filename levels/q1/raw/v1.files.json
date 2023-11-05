@@ -1,0 +1,79 @@
+{
+    "files":
+    [
+        {
+            "name": "Solution.java",
+            "path": "/the-cake-is-not-a-lie/Solution.java",
+            "type": "file",
+            "editable": true,
+            "parent": "/the-cake-is-not-a-lie",
+            "content": "public class Solution {\n    public static int solution(String x) {\n    \t//Your code here\n    }\n}",
+            "is_new": true,
+            "content_type": "text/plain",
+            "expiry": "2023-11-12T02:21:09.802233Z",
+            "duration": null
+        },
+        {
+            "name": "constraints.txt",
+            "path": "/the-cake-is-not-a-lie/constraints.txt",
+            "type": "file",
+            "editable": false,
+            "parent": "/the-cake-is-not-a-lie",
+            "content": "Java<br>====<br>\nYour code will be compiled using standard Java 8. All tests will be run by calling the solution() method inside the Solution class<br>\n<br>\nExecution time is limited.<br>\n<br>\nWildcard imports and some specific classes are restricted (e.g. java.lang.ClassLoader). You will receive an error when you verify your solution if you have used a restricted class.<br>\n<br>\nThird-party libraries, input/output operations, spawning threads or processes and changes to the execution environment are not allowed.<br>\n<br>\nYour solution must be under 32000 characters in length including new lines and other non-printing characters.<br>\n<br>Python<br>======<br>\nYour code will run inside a Python 2.7.13 sandbox. All tests will be run by calling the solution() function.<br>\n<br>\nStandard libraries are supported except for bz2, crypt, fcntl, mmap, pwd, pyexpat, select, signal, termios, thread, time, unicodedata, zipimport, zlib.<br>\n<br>\nInput/output operations are not allowed.<br>\n<br>\nYour solution must be under 32000 characters in length including new lines and other non-printing characters.<br>\n",
+            "content_type": "text/html",
+            "expiry": "2023-11-12T02:21:09.802233Z",
+            "duration": null
+        },
+        {
+            "name": "journal.txt",
+            "path": "/journal.txt",
+            "type": "file",
+            "editable": false,
+            "parent": "/",
+            "content": "Success! You've managed to infiltrate Commander Lambda's evil organization, and finally earned yourself an entry-level position as a Minion on their space station. From here, you just might be able to subvert Commander Lambda's plans to use the LAMBCHOP doomsday device to destroy Bunny Planet. Problem is, Minions are the lowest of the low in the Lambda hierarchy. Better buck up and get working, or you'll never make it to the top...<br><br>Next time Bunny HQ needs someone to infiltrate a space station to rescue bunny workers, you're going to tell them to make sure 'stay up for 48 hours straight scrubbing toilets' is part of the job description. It's only fair to warn people, after all.",
+            "content_type": "text/html"
+        },
+        {
+            "name": "readme.txt",
+            "path": "/the-cake-is-not-a-lie/readme.txt",
+            "type": "file",
+            "editable": false,
+            "parent": "/the-cake-is-not-a-lie",
+            "content": "\nThe cake is not a lie!<br>======================<br>\n\nCommander Lambda has had an incredibly successful week: the first test of the LAMBCHOP doomsday device was completed AND Lambda set a new personal high score in Tetris. To celebrate, the Commander ordered cake for everyone -- even the lowliest of minions! But competition among minions is fierce, and if you don&#39;t cut exactly equal slices of cake for everyone you&#39;ll get in big trouble. <br><br>The cake is round, and decorated with M&amp;Ms in a circle around the edge. But while the rest of the cake is uniform, the M&amp;Ms are not: there are multiple colors, and every minion must get exactly the same sequence of M&amp;Ms. Commander Lambda hates waste and will not tolerate any leftovers, so you also want to make sure you can serve the entire cake.<br><br>To help you best cut the cake, you have turned the sequence of colors of the M&amp;Ms on the cake into a string: each possible letter (between a and z) corresponds to a unique color, and the sequence of M&amp;Ms is given clockwise (the decorations form a circle around the outer edge of the cake).<br><br>Write a function called solution(s) that, given a non-empty string less than 200 characters in length describing the sequence of M&amp;Ms, returns the maximum number of equal parts that can be cut from the cake without leaving any leftovers.<br>\n\n<br>Languages<br>=========<br><br>\nTo provide a Python solution, edit <span class=\"term-yellow\">solution.py</span><br>\nTo provide a Java solution, edit <span class=\"term-yellow\">Solution.java</span><br>\n\n<br>Test cases<br>==========<br>\nYour code should pass the following test cases.<br>Note that it may also be run against hidden test cases not shown here.<br><br>\n\n-- Python cases --<br>\nInput:<br>solution.solution(&quot;abccbaabccba&quot;)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;2<br><br>\n\nInput:<br>solution.solution(&quot;abcabcabcabc&quot;)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;4<br><br>\n-- Java cases --<br>\nInput:<br>Solution.solution(&quot;abccbaabccba&quot;)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;2<br><br>\n\nInput:<br>Solution.solution(&quot;abcabcabcabc&quot;)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;4<br><br>\n\n\nUse <span class=\"term-yellow\">verify [file]</span> to test your solution and see how it does.\nWhen you are finished editing your code, use <span class=\"term-yellow\">submit [file]</span> to submit your answer.\nIf your solution passes the test cases, it will be removed from your home folder.",
+            "content_type": "text/html",
+            "expiry": "2023-11-12T02:21:09.802233Z",
+            "duration": null
+        },
+        {
+            "name": "solution.py",
+            "path": "/the-cake-is-not-a-lie/solution.py",
+            "type": "file",
+            "editable": true,
+            "parent": "/the-cake-is-not-a-lie",
+            "content": "def solution(s):\n    # Your code here",
+            "is_new": true,
+            "content_type": "text/plain",
+            "expiry": "2023-11-12T02:21:09.802233Z",
+            "duration": null
+        },
+        {
+            "name": "start_here.txt",
+            "path": "/start_here.txt",
+            "type": "file",
+            "editable": false,
+            "parent": "/",
+            "content": "Type <span class=\"term-yellow\">request</span> to request a challenge.<br>Type <span class=\"term-yellow\">help</span> for a list of commands.",
+            "content_type": "text/html"
+        },
+        {
+            "name": "the-cake-is-not-a-lie",
+            "path": "/the-cake-is-not-a-lie",
+            "type": "folder",
+            "editable": false,
+            "parent": "/",
+            "content": null,
+            "expiry": "2023-11-12T02:21:09.802233Z",
+            "duration": null
+        }
+    ]
+}
