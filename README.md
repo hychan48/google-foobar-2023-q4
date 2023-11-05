@@ -21,13 +21,21 @@ pipx --version
 python -m pip install --user pipx
 python -m pipx ensurepath
 
+# might not be needed after all...
 pipx install poetry
 poetry --version
 poetry init
+
+# poetry might not be needed after all...
+poetry add pytest --group dev
+#poetry shell
+# 3.11.4 vs 3.11.6... interesting
 ```
 
-## poetry
+### Install pytest
 ```bash
-poetry add pytest --group dev
-poetry shell
+conda activate google-foorbar-2023-q4
+python -m pip install pytest
+
+python -m pip install -r requirements.txt
 ```

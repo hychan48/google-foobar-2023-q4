@@ -1,7 +1,8 @@
 def solution(str_input):
     """
     solution level 1 - python version
-
+    https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q1/src/solution.py
+    https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q1/tests/solutions_test.py
     :param str_input: Sequence of characters a-z. max length is 200 chars
     :type str_input: str
     :return: The maximum number of equal parts that can be cut from the cake without leaving any leftovers.
@@ -36,10 +37,11 @@ def solution(str_input):
         return True
 
     # Iterate over all divisors of input_length
-    for d in range(input_length // 2, 0, -1):  # Changed to decrement for efficiency
+    for d in range(1, input_length // 2 + 1):
+
         # If input_length is divisible by d
         if input_length % d == 0 and can_divide(d):
-            # i.e., input_length / pattern_length = part_length
+            # i.e. input_length / pattern_length = part_length. 12/6 = 2
             # Convert to answer's format, i.e., number of equal parts
             return input_length // d
 
@@ -48,4 +50,4 @@ def solution(str_input):
 
 
 # Example usage
-print(solution("abccbaabccba"))  # Expected output: 2
+# print(solution("abccbaabccba"))  # Expected output: 2
