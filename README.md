@@ -28,5 +28,6 @@ poetry init
 
 ## poetry
 ```bash
-
+poetry add pytest --group dev
+poetry shell
 ```
