@@ -29,8 +29,8 @@ Output:
 ```
 ### Knight's Tour Solution
 * https://www.maths-resources.com/knights/
-![solution-1_19-to-36-in-1.png](raw%2Fknight-tour-solution-1.png)
-![solution-2_0-to-1-in-3.png](raw%2Fknight-tour-solution-2.png)
+* ![solution-1_19-to-36-in-1.png](raw%2Fknight-tour-solution-1.png)
+* ![solution-2_0-to-1-in-3.png](raw%2Fknight-tour-solution-2.png)
 ## Keywords
 <!-- if applicable for question / expected value -->
 ## Solution
