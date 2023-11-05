@@ -33,6 +33,7 @@ def solution(str_input):
     # str_input should be a string of a-z characters
     if not str_input.islower():
         raise ValueError('String must be all lowercase')
+
     # ---------------------
     def can_divide(window_sliding_length):
         """
@@ -65,4 +66,4 @@ def solution(str_input):
     return 1
 
 # Example usage
-# print(solution("abccbaabccba"))  # Expected output: 2
+# print(solution("abab"))  # Expected output: 2
