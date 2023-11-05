@@ -160,3 +160,15 @@ cython_debug/
 #.idea/
 /node_modules/
 /temp/
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/deployment.xml
+/.idea/google-foobar-2023-q4.iml
+/.idea/jsLibraryMappings.xml
+/.idea/jupyter-settings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
