@@ -7,8 +7,7 @@
 # Appendix
 * remember when verify / submit check the api
 * [/api/v1/files/
-](/api/v1/files/
-)
+](https://foobar.withgoogle.com/api/v1/files/)
 * copied to /raw/v1.files.json
 * copied to /raw/v1.files.yaml
 ## Question 
