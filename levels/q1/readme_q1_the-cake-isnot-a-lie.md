@@ -1,7 +1,7 @@
 # Cake no lie
 * python 2.7 lol
 * iirc python 2.7 supports python 3 syntax more or less
-
+* Algorithm class type of question
 
 
 # Appendix
@@ -58,7 +58,12 @@ Output:
 * and then do it in python 2.7
 
 # dev env javascript
-
-
+* q1-exp.test.mjs
+  * start with test given and also rotate the input
+  * todo add package.json / nested package.json script runners
+* most likely a sliding window / recurrence problem
+```bash
+pnpm run test:q1
+```
 # env
 * probably use mamba/conda for python 2.7

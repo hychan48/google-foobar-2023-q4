@@ -4,7 +4,7 @@
   "description": "https://github.com/hychan48/google-foobar-2023-q4",
   "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:q1": "mocha levels/q1/tests/q1-exp.test.mjs"
   },
   "keywords": [],
   "author": "hychan48",
