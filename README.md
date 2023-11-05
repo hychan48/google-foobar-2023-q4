@@ -35,6 +35,7 @@ pnpm run test:q1
     - TDD
     - Quick and dirty
       - Unless the question piques my research interest
+      - 7 days per question seems like a lot of time
   - Priorities
   - [ ] JSDoc @typedef but for Python 
   - [ ] Metadata

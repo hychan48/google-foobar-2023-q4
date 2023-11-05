@@ -39,7 +39,7 @@ Output:
 
 
 # Initial thoughts
-* Interesting question to animate. However, let's just get it done
+* Interesting question to animate. However, let's just get it done (7 days left though, I can afford to have fun)
   * Like the Knight's Tour problem animation.
   * [Interactive Knight's Tour](https://www.maths-resources.com/knights/)
   * 
