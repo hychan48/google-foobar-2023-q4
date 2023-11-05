@@ -1,6 +1,6 @@
 /**
 
-*/
+ */
 // import { createRequire } from 'module';
 // const require = createRequire(import.meta.url);
 // const assert = require('assert');
@@ -24,27 +24,27 @@ function writeToFile(fileName,data,space=2){
  * O(n*sqrt(n)) worst time complexity
  */
 function solution(s) {
-    const L = s.length;
+  const L = s.length;
 
-    // Helper function to check if the string can be divided into equal parts of a given length
-    function canDivide(length) {
-        const pattern = s.substring(0, length);
-        for (let i = length; i < L; i += length) {
-            if (s.substring(i, i + length) !== pattern) {
-                return false;
-            }
-        }
-        return true;
+  // Helper function to check if the string can be divided into equal parts of a given length
+  function canDivide(length) {
+    const pattern = s.substring(0, length);
+    for (let i = length; i < L; i += length) {
+      if (s.substring(i, i + length) !== pattern) {
+        return false;
+      }
     }
+    return true;
+  }
 
-    // Iterate over all divisors of L
-    for (let d = 1; d <= Math.floor(L / 2); d++) {
-        if (L % d === 0 && canDivide(d)) {
-            return L / d;
-        }
+  // Iterate over all divisors of L
+  for (let d = 1; d <= Math.floor(L / 2); d++) {
+    if (L % d === 0 && canDivide(d)) {
+      return L / d;
     }
+  }
 
-    return 1; // If no pattern is found, you can only cut the cake into 1 part
+  return 1; // If no pattern is found, you can only cut the cake into 1 part
 }
 
 /**
@@ -54,7 +54,7 @@ describe('q1-exp.test.mjs - solution demo', function(){
   /*
    * Gen ai to create it blocks
    */
-   //solution("abccbaabccba") returns 2
+  //solution("abccbaabccba") returns 2
   it('solution("abccbaabccba") returns 2', function(){
     assert.strictEqual(solution("abccbaabccba"),2);
   });
@@ -82,6 +82,13 @@ describe('q1-exp.test.mjs - solution demo', function(){
   //solution("aabccbaabccb") returns 2
   it('solution("aabccbaabccb") returns 2', function(){
     assert.strictEqual(solution("aabccbaabccb"),2);
+  });
+  //returns 1
+  it('solution("a") returns 1', function(){
+    assert.strictEqual(solution("a"),1);
+  });
+  it('solution("abcdefg") returns 1', function(){
+    assert.strictEqual(solution("abcdefg"),1);
   });
   //add more later / make generator if needed
 
