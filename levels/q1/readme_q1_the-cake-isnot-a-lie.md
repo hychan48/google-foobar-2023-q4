@@ -1,15 +1,4 @@
 # Cake no lie
-* python 2.7 lol
-* iirc python 2.7 supports python 3 syntax more or less
-* Algorithm class type of question
-
-
-# Appendix
-* remember when verify / submit check the api
-* [/api/v1/files/
-](https://foobar.withgoogle.com/api/v1/files/)
-* copied to /raw/v1.files.json
-* copied to /raw/v1.files.yaml
 ## Question 
 ```txt
 Create a function `solution(s)` to divide a cake with a circular sequence of M&Ms into equal parts.
@@ -49,23 +38,41 @@ Output:
 * same sequence of M&Ms without leftovers
 * array is circular
 * 1-26
+* 
+## Solution
+* divide the string into equal parts
+* using a sliding window
+```bash
+pnpm run test:q1 # javascript solution
+python -m pytest levels/q1/tests/solutions_test.py # python 3.11 soln
+# python 3.11 should work in 2.7 too due to it's simplicity.
+```
 
-# First steps
+
+# Appendix
+* ignored constraints
+* remember when verify / submit check the api
+* [/api/v1/files/
+](https://foobar.withgoogle.com/api/v1/files/)
+* copied to /raw/v1.files.json
+* copied to /raw/v1.files.yaml
+
+## First steps
 * setup env / test
 * do it in w/e language im first comfortable with
   * set timer. then seek help, time is precious
 * and then do it in python 2.7
+* Chose Python over java just because I have PyCharm already installed
 
-# dev env javascript
+## dev env javascript
 * q1-exp.test.mjs
   * start with test given and also rotate the input
   * todo add package.json / nested package.json script runners
 * most likely a sliding window / recurrence problem
-```bash
-pnpm run test:q1
-python -m pytest levels/q1/tests/solutions_test.py
-```
-# env
+## env
 * probably use mamba/conda for python 2.7
 * didnt work... let's just use 3.11 with conda first
-* 
+
+* python 2.7 lol
+* iirc python 2.7 supports python 3 syntax more or less
+* Algorithm class type of question
