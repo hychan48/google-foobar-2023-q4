@@ -25,29 +25,64 @@ Return the maximum number of equal slices that can be made.
 
 ## Raw Question
 * levels/q1/raw/q1_readme.txt.html
-```html
-<body>Don&#39;t Get Volunteered!<br>======================<br>
+<!-- Had to convert to txt... html tag on GitHub didn't format properly -->
+```txt
+Don't Get Volunteered!
+======================
+As a henchman on Commander Lambda's space station, you're expected to be resourceful, smart, and a quick thinker. It's not easy building a doomsday device and ordering the bunnies around at the same time, after all! In order to make sure that everyone is sufficiently quick-witted, Commander Lambda has installed new flooring outside the henchman dormitories. It looks like a chessboard, and every morning and evening you have to solve a new movement puzzle in order to cross the floor. That would be fine if you got to be the rook or the queen, but instead, you have to be the knight. Worse, if you take too much time solving the puzzle, you get "volunteered" as a test subject for the LAMBCHOP doomsday device!
 
-As a henchman on Commander Lambda&#39;s space station, you&#39;re expected to be resourceful, smart, and a quick thinker. It&#39;s not easy building a doomsday device and ordering the bunnies around at the same time, after all! In order to make sure that everyone is sufficiently quick-witted, Commander Lambda has installed new flooring outside the henchman dormitories. It looks like a chessboard, and every morning and evening you have to solve a new movement puzzle in order to cross the floor. That would be fine if you got to be the rook or the queen, but instead, you have to be the knight. Worse, if you take too much time solving the puzzle, you get &quot;volunteered&quot; as a test subject for the LAMBCHOP doomsday device!<br><br>To help yourself get to and from your bunk every day, write a function called solution(src, dest) which takes in two parameters: the source square, on which you start, and the destination square, which is where you need to land to solve the puzzle.  The function should return an integer representing the smallest number of moves it will take for you to travel from the source square to the destination square using a chess knight&#39;s moves (that is, two squares in any direction immediately followed by one square perpendicular to that direction, or vice versa, in an &quot;L&quot; shape).  Both the source and destination squares will be an integer between 0 and 63, inclusive, and are numbered like the example chessboard below:<br><br>-------------------------<br>| 0| 1| 2| 3| 4| 5| 6| 7|<br>-------------------------<br>| 8| 9|10|11|12|13|14|15|<br>-------------------------<br>|16|17|18|19|20|21|22|23|<br>-------------------------<br>|24|25|26|27|28|29|30|31|<br>-------------------------<br>|32|33|34|35|36|37|38|39|<br>-------------------------<br>|40|41|42|43|44|45|46|47|<br>-------------------------<br>|48|49|50|51|52|53|54|55|<br>-------------------------<br>|56|57|58|59|60|61|62|63|<br>-------------------------<br>
+To help yourself get to and from your bunk every day, write a function called solution(src, dest) which takes in two parameters: the source square, on which you start, and the destination square, which is where you need to land to solve the puzzle. The function should return an integer representing the smallest number of moves it will take for you to travel from the source square to the destination square using a chess knight's moves (that is, two squares in any direction immediately followed by one square perpendicular to that direction, or vice versa, in an "L" shape). Both the source and destination squares will be an integer between 0 and 63, inclusive, and are numbered like the example chessboard below:
 
-<br>Languages<br>=========<br><br>
-To provide a Python solution, edit <span class="term-yellow">solution.py</span><br>
-To provide a Java solution, edit <span class="term-yellow">Solution.java</span><br>
+-------------------------
+| 0| 1| 2| 3| 4| 5| 6| 7|
+-------------------------
+| 8| 9|10|11|12|13|14|15|
+-------------------------
+|16|17|18|19|20|21|22|23|
+-------------------------
+|24|25|26|27|28|29|30|31|
+-------------------------
+|32|33|34|35|36|37|38|39|
+-------------------------
+|40|41|42|43|44|45|46|47|
+-------------------------
+|48|49|50|51|52|53|54|55|
+-------------------------
+|56|57|58|59|60|61|62|63|
+-------------------------
 
-<br>Test cases<br>==========<br>
-Your code should pass the following test cases.<br>Note that it may also be run against hidden test cases not shown here.<br><br>
+Languages
+=========
 
--- Python cases --<br>
-Input:<br>solution.solution(19, 36)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;1<br><br>
+To provide a Python solution, edit solution.py
+To provide a Java solution, edit Solution.java
 
-Input:<br>solution.solution(0, 1)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;3<br><br>
--- Java cases --<br>
-Input:<br>Solution.solution(19, 36)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;1<br><br>
+Test cases
+==========
+Your code should pass the following test cases.
+Note that it may also be run against hidden test cases not shown here.
 
-Input:<br>Solution.solution(0, 1)<br>Output:<br>&nbsp;&nbsp;&nbsp;&nbsp;3<br><br>
+-- Python cases --
+Input:
+solution.solution(19, 36)
+Output:
+    1
 
+Input:
+solution.solution(0, 1)
+Output:
+    3
 
-Use <span class="term-yellow">verify [file]</span> to test your solution and see how it does.
-When you are finished editing your code, use <span class="term-yellow">submit [file]</span> to submit your answer.
-If your solution passes the test cases, it will be removed from your home folder.</body>
+-- Java cases --
+Input:
+Solution.solution(19, 36)
+Output:
+    1
+
+Input:
+Solution.solution(0, 1)
+Output:
+    3
+
+Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 ```
