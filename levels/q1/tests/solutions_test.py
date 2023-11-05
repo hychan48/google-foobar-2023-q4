@@ -46,5 +46,23 @@ def test_solution_with_unique_characters():
 # More tests can be added in a similar manner
 
 
+# ---------------------
+# expected to fail smoke tests
+def test_solution_with_invalid_length():
+    with pytest.raises(ValueError):
+        solution.solution("a" * 201)
+
+
+# test for null and others
+def test_solution_with_invalid_characters():
+    with pytest.raises(ValueError):
+        solution.solution("a" * 200 + "A")
+
+
+def test_solution_is_empty():
+    with pytest.raises(ValueError):
+        solution.solution("")
+
+
 if __name__ == '__main__':
     pytest.main(sys.argv)

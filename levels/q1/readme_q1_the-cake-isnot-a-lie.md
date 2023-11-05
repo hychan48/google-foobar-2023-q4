@@ -64,6 +64,7 @@ Output:
 * most likely a sliding window / recurrence problem
 ```bash
 pnpm run test:q1
+python -m pytest levels/q1/tests/solutions_test.py
 ```
 # env
 * probably use mamba/conda for python 2.7

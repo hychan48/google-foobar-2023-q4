@@ -1,8 +1,17 @@
+"""
+Quick and dirty. O(sqrt(n)) time complexity. worst case O(n*sqrt(n)) time complexity.
+< 200 length. so its negligible
+https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q1/src/solution.py
+https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q1/tests/solutions_test.py
+
+python -m pytest levels/q1/tests/solutions_test.py
+"""
+
+
 def solution(str_input):
     """
     solution level 1 - python version
-    https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q1/src/solution.py
-    https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q1/tests/solutions_test.py
+
     :param str_input: Sequence of characters a-z. max length is 200 chars
     :type str_input: str
     :return: The maximum number of equal parts that can be cut from the cake without leaving any leftovers.
@@ -12,12 +21,18 @@ def solution(str_input):
         < 200 characters so shouldn't be an issue
         O(sqrt(n)) time complexity
         O(n*sqrt(n)) worst time complexity
+
     """
+    # ---------------------
+    # Input validation
     # Length - max 200
     input_length = len(str_input)
     if input_length > 200:
         raise ValueError('String length must be less than 200')
-
+    # str_input should be a string of a-z characters
+    if not str_input.islower():
+        raise ValueError('String must be all lowercase')
+    # ---------------------
     def can_divide(window_sliding_length):
         """
         Helper function to check if the string can be divided into equal parts of a given length
@@ -47,7 +62,6 @@ def solution(str_input):
 
     # Else: no pattern is found, you can only cut the cake into 1 part
     return 1
-
 
 # Example usage
 # print(solution("abccbaabccba"))  # Expected output: 2
