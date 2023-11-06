@@ -49,10 +49,16 @@ Output:
   * Can be optimized by using @mnemonic decorator
     * However, support was dropped for 2.7 since it's deprecated amost 4 years ago in 2020
 
+# Revised thoughts
+* after my soln... todo
+
+
 # Appendix
 ## Raw Question
 * levels/q1/raw/q1_readme.txt.html
-<!-- Had to convert to txt... html tag on GitHub didn't format properly -->
+<!-- Had to convert to txt... html tag on GitHub didn't format properly 
+verify score in the network tab. and see if there's mroe
+-->
 ```txt
 Don't Get Volunteered!
 ======================
