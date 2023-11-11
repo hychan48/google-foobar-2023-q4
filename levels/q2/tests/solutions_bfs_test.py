@@ -55,6 +55,9 @@ def test_00_to_11_soln():
     [0, 1, 3],
     [0, 9, 4],
     [0, 63, 6],
+    [0, 9, 4],  # as i thought dy/dx isnt enough. but good example of ILP boundaries
+    [27, 20, 2],  # kinda unexpected
+    # [27,20,4], # as i thought
     # //maybe convert to easier input
 ]
                          )

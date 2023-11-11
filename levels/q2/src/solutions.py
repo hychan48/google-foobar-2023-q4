@@ -25,6 +25,7 @@ def knight_bfs(start, end):
     :return:
     # Example usage:
     # assert knight_bfs((0, 0), (0,1)) == 3
+    https://en.wikipedia.org/wiki/Breadth-first_search
     """
     # Create a visited 2D array and initialize it with False
     visited = [[False for _ in range(N)] for _ in range(N)]
