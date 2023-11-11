@@ -1,5 +1,6 @@
+# https://github.com/hychan48/google-foobar-2023-q4/blob/e1839dae7b8eb5d72061ab87c820f3ca4629a440/levels/q2/src/solutions.py#L1-L0
+# @author: hychan48
 from collections import deque
-import pytest
 
 # Define the size of the chessboard
 N = 8
