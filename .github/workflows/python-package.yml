@@ -39,4 +39,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest levels/q1/tests/solutions_test.py
-        pytest levels/q2/tests/solutions_test.py
+        pytest levels/q2/tests/solutions_bfs_test.py
