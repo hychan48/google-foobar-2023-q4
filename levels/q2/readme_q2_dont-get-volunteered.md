@@ -139,7 +139,7 @@ Output:
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 ```
 
-# verify file
+# Verify file
 * returns a json
 ```json
 {
@@ -147,3 +147,13 @@ Use verify [file] to test your solution and see how it does. When you are finish
     "score": 100
 }
 ```
+
+## Interesting
+* python 2.7 didnt have types. i.e.
+```python
+def some_function(x:int, y:int):
+    print(x,y)
+```
+
+![image](https://github.com/hychan48/google-foobar-2023-q4/assets/6209340/2a9a37c0-b29e-4ab2-bdf9-780c034d2b3e)
+
