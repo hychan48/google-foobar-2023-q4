@@ -26,6 +26,8 @@ pnpm run test:q1
 * [readme_q2_dont-get-volunteered.md](levels/q2/readme_q2_dont-get-volunteered.md)
 * Simplified Knight's Tour problem
   * Textbook BFS, but I wanted to animate it
+  * [BFS Wiki](https://en.wikipedia.org/wiki/Breadth-first_search)
+  * [Knight's Tour Game](https://www.maths-resources.com/knights/)
 * Experimented with ILP. Good example to teach with
 ```bash
 pytest ./levels/q2/tests/solutions_bfs_test.py

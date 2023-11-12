@@ -12,8 +12,8 @@ or vice versa, in an "L" shape).
 Shown in the appendix
 ```
 ## Solution Summarized
-
-[//]: # (todo)
+* Textbook BFS / Knight's Tour Problem
+* 
 ## Expected Values
 ```txt
 -- Python cases --
@@ -44,7 +44,7 @@ Output:
   * [Interactive Knight's Tour](https://www.maths-resources.com/knights/)
   * 
 * Good ol brute force? Dynamic programming? or greedy?
-  * Challenge is to guarantee the minimum number of moves
+  * Challenge is to guarantee the minimum number of moves? I think BFS can guarantee that.
   * BFS smart brute force
 * Python 3.11.6 should be backwards compatible with 2.7 for this question. Based on previous experience.
   * Can be optimized by using @mnemonic decorator

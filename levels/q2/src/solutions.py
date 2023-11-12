@@ -1,12 +1,25 @@
-# https://github.com/hychan48/google-foobar-2023-q4/blob/e1839dae7b8eb5d72061ab87c820f3ca4629a440/levels/q2/src/solutions.py#L1-L0
-# @author: hychan48
 from collections import deque
+"""
+# @author: hychan48
+https://github.com/hychan48/google-foobar-2023-q4/blob/e1839dae7b8eb5d72061ab87c820f3ca4629a440/levels/q2/src/solutions.py#L1-L0
+
+# BFS Solution
+
+# unit tested with
+https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q2/tests/solutions_bfs_test.py
+# Alt solution with ILP
+"""
 
 # Define the size of the chessboard
 N = 8
 
 # Possible moves a knight can make
+# like a compass NNW, NNE, ENE, ESE, SSE, SSW, WSW, WNW
 knight_moves = [
+    """
+    :param x: dx
+    :param y: dy
+    """
     (-2, -1), (-1, -2), (1, -2), (2, -1),
     (-2, 1), (-1, 2), (1, 2), (2, 1)
 ]
@@ -25,12 +38,13 @@ def is_valid(x, y, visited):
 
 
 # BFS to find the shortest path for a knight on a chessboard
-def knight_bfs(start, end):
+def knight_bfs(start:int, end:int):
     """
-    :param start:
-    :param end:
+    :param start: (x,y)
+    :param end: (x,y)
     :return:
     # Example usage:
+    # assumes inputs are sanitized by caller
     # assert knight_bfs((0, 0), (0,1)) == 3
     https://en.wikipedia.org/wiki/Breadth-first_search
     """
@@ -64,7 +78,7 @@ def knight_bfs(start, end):
 
 # convert 0 to (0,0), 1 to (0,1), 2 to (0,2), 3 to (0,3), 4 to (0,4), 5 to (0,5), 6 to (0,6), 7 to (0,7)
 # 63 to (7,7)
-def convert_to_tuple(num):
+def convert_to_tuple(num:int):
     """
     :param num: 0-63
     :return: (0,0) - (7,7)
@@ -74,7 +88,7 @@ def convert_to_tuple(num):
     return num // 8, num % 8
 
 
-def solution(src, dest):
+def solution(src:int, dest:int):
     """
     Simplified Knight's Tour using Breadth First Search on 8x8
 
@@ -83,7 +97,9 @@ def solution(src, dest):
     :param dest: 0-63
     :return: int: number of moves to get from src to dest
     """
-    # convert 0 to (0,0), 1 to (0,1), 2 to (0,2), 3 to (0,3), 4 to (0,4), 5 to (0,5), 6 to (0,6), 7 to (0,7)
-    # todo add error handling / check
+    # verify / throw error if src and dest are not within 0-63
+    if src < 0 or src > 63 or dest < 0 or dest > 63:
+        raise ValueError("src and dest must be between 0-63")
 
+    # convert 0 to (0,0), 1 to (0,1), 2 to (0,2), 3 to (0,3), 4 to (0,4), 5 to (0,5), 6 to (0,6), 7 to (0,7)
     return knight_bfs(convert_to_tuple(src), convert_to_tuple(dest))
