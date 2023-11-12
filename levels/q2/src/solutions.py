@@ -15,11 +15,9 @@ N = 8
 
 # Possible moves a knight can make
 # like a compass NNW, NNE, ENE, ESE, SSE, SSW, WSW, WNW
+# :param x: dx
+# :param y: dy
 knight_moves = [
-    """
-    :param x: dx
-    :param y: dy
-    """
     (-2, -1), (-1, -2), (1, -2), (2, -1),
     (-2, 1), (-1, 2), (1, 2), (2, 1)
 ]
