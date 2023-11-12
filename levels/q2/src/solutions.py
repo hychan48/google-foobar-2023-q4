@@ -8,6 +8,7 @@ https://github.com/hychan48/google-foobar-2023-q4/blob/e1839dae7b8eb5d72061ab87c
 # unit tested with
 https://github.com/hychan48/google-foobar-2023-q4/blob/main/levels/q2/tests/solutions_bfs_test.py
 # Alt solution with ILP
+# interesting... had to remove types because of python 2.7
 """
 
 # Define the size of the chessboard
