@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "google-foobar-2023-q4"
-version = "0.2.0"
+version = "0.2.1"
 description = "JC's Google Foobar Journey - 2023 Q4"
 homepage = "https://github.com/hychan48/google-foobar-2023-q4"
 repository = "https://github.com/hychan48/google-foobar-2023-q4"
