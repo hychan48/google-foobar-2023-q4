@@ -1,4 +1,10 @@
 # google-foobar-2023-q4
+## Production
+<!-- todo
+add some assets
+->
+
+
 ## Background
 * https://github.com/hychan48/google-foobar-2023-q4
 * I searched proxy vs load balancer. and at first I found it mad sketch

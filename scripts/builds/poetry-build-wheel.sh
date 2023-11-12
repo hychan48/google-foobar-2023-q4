@@ -24,7 +24,8 @@ poetry shell
 # check conda's virtualenvs settigns
 # git dependency
 # https://python-poetry.org/docs/dependency-specification/
-# i only want the wheel when i tag. python-tag is only py2 and py3 atm
+# i only want the wheel when i tag / or auto tag or auto release. we'll see
+# # python-tag is only py2 and py3 atm
 # The wheel filename is {distribution}-{version}(-{build tag})?-{python tag}-{abi tag}-{platform tag}.whl.
 # google_foobar_2023_q4-0.2.0-py3-none-any.whl
 

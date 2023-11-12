@@ -23,10 +23,16 @@ packages = [
 # exclude = ["my_package/excluded.py"]
 
 # for pypi:
-#classifiers = [
+# https://pypi.org/classifiers/
+classifiers = [
+    "Environment :: Console",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Intended Audience :: Education",
+    "Natural Language :: English",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
 #    "Topic :: Software Development :: Build Tools",
 #    "Topic :: Software Development :: Libraries :: Python Modules"
-#]
+]
 #[tool.poetry.urls]
 #"Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
 
