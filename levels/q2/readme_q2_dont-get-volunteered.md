@@ -45,6 +45,7 @@ Output:
   * 
 * Good ol brute force? Dynamic programming? or greedy?
   * Challenge is to guarantee the minimum number of moves
+  * BFS smart brute force
 * Python 3.11.6 should be backwards compatible with 2.7 for this question. Based on previous experience.
   * Can be optimized by using @mnemonic decorator
     * However, support was dropped for 2.7 since it's deprecated amost 4 years ago in 2020

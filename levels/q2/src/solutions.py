@@ -14,6 +14,13 @@ knight_moves = [
 
 # Check if the position is inside the board and not already visited
 def is_valid(x, y, visited):
+    """
+    :param x:
+    :param y:
+    :param visited:
+    :return:
+    """
+    # if not visited x,y and within bounds of 0-7 (N is 8, 8x8 board)
     return (0 <= x < N) and (0 <= y < N) and not visited[x][y]
 
 
@@ -27,7 +34,7 @@ def knight_bfs(start, end):
     # assert knight_bfs((0, 0), (0,1)) == 3
     https://en.wikipedia.org/wiki/Breadth-first_search
     """
-    # Create a visited 2D array and initialize it with False
+    # Initialize 8x8 chess board / grid / matrix with False.
     visited = [[False for _ in range(N)] for _ in range(N)]
 
     # Create a queue and enqueue the starting position with a distance of 0
@@ -61,7 +68,9 @@ def convert_to_tuple(num):
     """
     :param num: 0-63
     :return: (0,0) - (7,7)
+
     """
+    # divide by 8 and '//' floor. and mod 8. standard math. unit tested just incase
     return num // 8, num % 8
 
 
@@ -72,7 +81,7 @@ def solution(src, dest):
     Also created an altnerative in ILP solution for practice
     :param src: 0-63
     :param dest: 0-63
-    :return:
+    :return: int: number of moves to get from src to dest
     """
     # convert 0 to (0,0), 1 to (0,1), 2 to (0,2), 3 to (0,3), 4 to (0,4), 5 to (0,5), 6 to (0,6), 7 to (0,7)
     # todo add error handling / check
