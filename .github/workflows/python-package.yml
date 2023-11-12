@@ -7,8 +7,14 @@ on:
 # only pull request should be fine with the rule i set...
 #  push:
 #    branches: [ "main" ]
+  push:
+    paths:
+      - ".github/workflows/python-package.yml" # this file1
   pull_request:
     branches: [ "main" ]
+    paths:
+      - "**.py" # all python files in repo
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
     # https://stackoverflow.com/questions/63822219/how-to-run-github-actions-workflow-only-if-the-pushed-files-are-in-a-specific-fo
 
 

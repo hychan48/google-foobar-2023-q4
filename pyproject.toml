@@ -9,7 +9,9 @@ authors = ["JC <jchan48@gmail.com>"]
 readme = "README.md"
 license = "AGPL-3.0"
 
-# wheell name google_foobar_2023_q4-0.2.0-py3-none-any.whl
+# wheell name
+# google_foobar_2023_q4-0.2.0-py3-none-any.whl
+# i might need to add 'namespace' to it. but let's try with just pipx / poetry with github first
 packages = [
     # Not an ideal name for the package
     { include = "levels" }
