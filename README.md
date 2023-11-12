@@ -22,7 +22,14 @@ python -m pytest levels/q1/tests/solutions_test.py
 pnpm run test:q1
 ```
 
-## level 2
+## level 2 
+* [readme_q2_dont-get-volunteered.md](levels/q2/readme_q2_dont-get-volunteered.md)
+* Simplified Knight's Tour problem
+  * Textbook BFS, but I wanted to animate it
+* Experimented with ILP. Good example to teach with
+```bash
+pytest ./levels/q2/tests/solutions_bfs_test.py
+```
 
 # Quick Checklist
 - [ ] Documentation
