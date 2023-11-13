@@ -74,3 +74,4 @@ export PATH=$PATH:~/.local/bin
 * repl.it
 * jupyter
 * YT would be luxury
+* Docker
