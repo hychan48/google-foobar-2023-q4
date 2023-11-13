@@ -36,11 +36,19 @@ classifiers = [
 #[tool.poetry.urls]
 #"Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
 
+# https://python-poetry.org/docs/pyproject/#scripts
+[tool.poetry.scripts]
+hychan48="levels:main"
+hychan48-cake-is-not-a-lie="levels:cake"
+#hychan48-cake-is-not-a-lie= { reference = "levels.q1.src.solution:solution", type = "console" }
+#devtest = { reference = "mypackage:test.run_tests", extras = ["test"], type = "console" }
+
 
 [tool.poetry.dependencies]
 # github action covers only 3.9, 3.10, 3.11
 python = ">=3.9,<3.12"
 #python = "^3.11"
+fire = "^0.5.0"
 
 
 [tool.poetry.group.dev.dependencies]
