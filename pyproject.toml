@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "google-foobar-2023-q4"
-version = "0.2.1"
+version = "0.2.2"
 description = "JC's Google Foobar Journey - 2023 Q4"
 homepage = "https://github.com/hychan48/google-foobar-2023-q4"
 repository = "https://github.com/hychan48/google-foobar-2023-q4"
@@ -40,7 +40,7 @@ classifiers = [
 
 # https://python-poetry.org/docs/pyproject/#scripts
 [tool.poetry.scripts]
-# hychan48="levels:main"
+# hychan48-google-foobar-2023-q4="cli:fire_cake"
 hychan48-cake-is-not-a-lie="cli:fire_cake"
 hychan48-dont-get-volunteered="cli:fire_knight_bfs"
 #hychan48-cake-is-not-a-lie= { reference = "levels.q1.src.solution:solution", type = "console" }

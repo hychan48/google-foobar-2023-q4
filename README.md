@@ -2,28 +2,41 @@
 ## Production
 <!-- todo
 add some assets
+# pip install google-foobar-2023-q4
+hychan48-cake-is-not-a-lie --help
 -->
 
-## Installation
+### Installation
 ```bash
-pipx install git+https://github.com/hychan48/google-foobar-2023-q4.git
+# https://replit.com/@jasonchan51/hychan48-google-foobar-2023-q4
+pipx install google-foobar-2023-q4 
+
+hychan48-cake-is-not-a-lie --help
+hychan48-cake-is-not-a-lie abab
+hychan48-dont-get-volunteered 0 1
+```
+<!-- 
+# pipx install git+https://github.com/hychan48/google-foobar-2023-q4.git
 #pipx run --spec git+
 
-hychan48-cake-is-not-a-lie abab
 # Returns 2
 
 ```
+ -->
+
 ## Level 1
 * [readme_q1_the-cake-isnot-a-lie.md](levels/q1/readme_q1_the-cake-isnot-a-lie.md)
 ```bash
-cat levels/q1/src/solution.py
-# GitHub action runs PyTest
-python -m pytest levels/q1/tests/solutions_test.py
+hychan48-cake-is-not-a-lie abab
+
+# GitHub action runs the PyTests:
+pytest levels/q1/tests/solutions_test.py
 # JavaScript solution
 pnpm run test:q1
 ```
 
 ## level 2 
+### Question 1
 * [readme_q2_dont-get-volunteered.md](levels/q2/readme_q2_dont-get-volunteered.md)
 * Simplified Knight's Tour problem
   * Textbook BFS, but I wanted to animate it
@@ -31,6 +44,7 @@ pnpm run test:q1
   * [Knight's Tour Game](https://www.maths-resources.com/knights/)
 * Experimented with ILP. Good example to teach with
 ```bash
+hychan48-dont-get-volunteered 0 1 # Returns 3
 pytest ./levels/q2/tests/solutions_bfs_test.py
 ```
 
