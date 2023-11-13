@@ -14,7 +14,8 @@ license = "AGPL-3.0"
 # i might need to add 'namespace' to it. but let's try with just pipx / poetry with github first
 packages = [
     # Not an ideal name for the package
-    { include = "levels" }
+    { include = "levels" },
+    { include = "cli" },
     # has subpackages in a way. maybe should change the naming of this
     # regret not linking to the commit instead of main
     # we'll see
@@ -38,8 +39,9 @@ classifiers = [
 
 # https://python-poetry.org/docs/pyproject/#scripts
 [tool.poetry.scripts]
-hychan48="levels:main"
-hychan48-cake-is-not-a-lie="levels:cake"
+# hychan48="levels:main"
+hychan48-cake-is-not-a-lie="cli:fire_cake"
+hychan48-dont-get-volunteered="cli:fire_knight_bfs"
 #hychan48-cake-is-not-a-lie= { reference = "levels.q1.src.solution:solution", type = "console" }
 #devtest = { reference = "mypackage:test.run_tests", extras = ["test"], type = "console" }
 

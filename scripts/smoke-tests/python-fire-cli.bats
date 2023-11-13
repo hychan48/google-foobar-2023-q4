@@ -1,4 +1,5 @@
 #!/usr/bin/env bats
+# assumes conda env is activated
 # Testing fire and poetry CLI
 # https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test
 # install bats-core and bats-assert
@@ -6,6 +7,8 @@
 
 setup() {
     PROJECT_ROOT=`git rev-parse --show-toplevel`
+    # conda activate $PROJECT_ROOT/venv
+    # poetry shell
     load "$PROJECT_ROOT/test/test_helper/bats-assert/load"
     load "$PROJECT_ROOT/test/test_helper/bats-support/load"
     # load 'test/test_helper/bats-assert/load'
@@ -17,18 +20,26 @@ setup() {
     DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )"
     # make executables in src/ visible to PATH
     PATH="$DIR/../src:$PATH"
+    poetry install
 
     # conda activate $PROJECT_ROOT/venv
 
     # look into shared setup
 }
+# teardown() {
+  # deactivate
+# }
+
 conda_env_test(){
+  # runs when im already activated
   conda info | grep "active env location" |grep "$PROJECT_ROOT"
 }
 @test "conda env" {
   # conda info
   run conda_env_test
   assert [ "$status" -eq 0 ]
+  # conda info | grep "active env location" |grep "$PROJECT_ROOT"
+  # only need to wrap if we're using assert
   # assert_output $PWD
   # conda info
 }
@@ -57,25 +68,59 @@ whence run
 vscode plugin probably easiest for me
 '
 # Using fire
-# Has to sync with levels/__init__.py
+# Has to sync set -euxo pipefail
+# set -euxo pipefail
+
 fire_q1(){
   # python3 -m fire levels q1 "$1"
-  # source ./envs/bin/activate
-  python3 -m fire levels q1 asddasd
+  # pytest levels/q1/test/test_solution.py
+  # check top 
+  python3 -m fire cli --help | head -n 100 | grep -qw "level 1"
+  python3 -m fire cli cake --help | head -n 100 |grep -qw STR_INPUT
+  python3 -m fire cli cake asdasd
+  # which python3
+  # python3 -m fire levels.q1.src.solution.solution asdasd
+  # python3 -m fire levels.q1.src.solution --help
+  # python3 -m fire levels cake --help | head -n 10
+  # python3 -m fire levels cake asdasd
 }
 @test "fire_q1" { 
+  run fire_q1
+  assert_line 2
+}
+q1_poetry(){
+  # python3 -m fire levels q1 "$1"
+  poetry run hychan48-cake-is-not-a-lie --help | grep -wq STR_INPUT
+  # poetry run hychan48-cake-is-not-a-lie asdasd
+}
+@test "q1_poetry" { 
+  run q1_poetry
+  run poetry run hychan48-cake-is-not-a-lie asdasd
+  assert_output 2
   
-  run python3 -m fire levels q1 "asdasd"
-  assert_output 'foobar'
+}
+debug_poetry(){
+  #https://felix11h.github.io/notes/ops/poetry.html
+  poetry env info
+  poetry env use python
+  poetry install
+  poetry run hychan48-cake-is-not-a-lie
+  poetry run hychan48-cake-is-not-a-lie --help | head -n 100
+  python3 -m fire levels --help | head -n 100
+  python3 -m fire levels main cake --help | head -n 10
+  python3 -m fire levels cake --help | head -n 10
+  python3 -m fire levels cake --help
+  python3 -m fire levels q1s --help
+
 }
 
-# commends do run... so
-@test "comments" {
-  skip "sup"
-  echo fail
-  # https://github.com/bats-core/bats-assert
+# # commends do run... so
+# @test "comments" {
+#   skip "sup"
+#   echo fail
+#   # https://github.com/bats-core/bats-assert
 
-}
+# }
 
 # @test "hi" { 
 #   echo "hi" # this runs file? or cmd
