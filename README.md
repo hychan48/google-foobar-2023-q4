@@ -1,11 +1,14 @@
-# google-foobar-2023-q4
+# @hychan48/google-foobar-2023-q4
 ## Production
 <!-- todo
 add some assets
 # pip install google-foobar-2023-q4
 hychan48-cake-is-not-a-lie --help
 -->
-
+<!-- todo add links for github, pypi, docker
+Remove dev code from the main readme
+Check with guidelines
+-->
 ### Installation
 ```bash
 # https://replit.com/@jasonchan51/hychan48-google-foobar-2023-q4
@@ -70,7 +73,7 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
   - Reword Question and Keywords
     - [ ] readme_q.template.md
   - Principles
-    - TDD
+    - TDD / BDD
     - Quick and dirty
       - Unless the question piques my research interest
       - 7 days per question seems like a lot of time
@@ -86,6 +89,7 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
   - [ ] Workflow with GitHub actions
     - Lint - Flake8
     - Unit Tests - PyTest
+    - Black / isort / mypy (might not work for 2.7)
 
 # dev setup
 ```bash
