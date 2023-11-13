@@ -78,14 +78,28 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
 # newer method
 
 # pull
+# bats installs differently? weird
+# mostly for bats
 git pull --recurse-submodule
 
 ## bats clones to test/ by default
 # 
 
 # first time
-git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
+# pipx / conda(mamba) / poetry
+
+git submodule add https://github.com/bats-core/bats-core.git test/bats
+git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
+# git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
 git commit -m 'Add bats-support library'
+tree test/bats/bin
+mkdir -p ~/.local/bin
+rm ~/.local/bin/bats
+ln -s $PWD/test/bats/bin/bats ~/.local/bin/bats 
+bats
+export PATH=$PATH:~/.local/bin
+
+# git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
 
 ```
 
