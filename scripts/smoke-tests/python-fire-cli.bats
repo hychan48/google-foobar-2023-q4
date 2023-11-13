@@ -6,6 +6,7 @@
 # https://github.com/ztombol/bats-docs
 
 setup() {
+    # todo parallelize
     PROJECT_ROOT=`git rev-parse --show-toplevel`
     # conda activate $PROJECT_ROOT/venv
     # poetry shell
@@ -20,7 +21,7 @@ setup() {
     DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )"
     # make executables in src/ visible to PATH
     PATH="$DIR/../src:$PATH"
-    poetry install
+    # poetry install
 
     # conda activate $PROJECT_ROOT/venv
 
@@ -99,6 +100,23 @@ q1_poetry(){
   assert_output 2
   
 }
+q2_poetry_help(){
+  # poetry run hychan48-dont-get-volunteered --help | head -n 100 |grep -qw Knight
+  poetry run hychan48-dont-get-volunteered --help | head -n 100
+}
+@test "q2_both" {
+  run python3 -m fire cli knight_bfs 0 1
+  assert_output 3
+  
+  run q2_poetry_help
+  assert_line --partial "Knight"
+  
+  run poetry run hychan48-dont-get-volunteered 0 1
+  assert_line 3
+}
+
+
+
 debug_poetry(){
   #https://felix11h.github.io/notes/ops/poetry.html
   poetry env info
