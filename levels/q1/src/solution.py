@@ -67,3 +67,5 @@ def solution(str_input):
 
 # Example usage
 # print(solution("abab"))  # Expected output: 2
+if __name__ == '__main__':
+    solution("abab")

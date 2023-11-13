@@ -7,3 +7,5 @@ from pathlib import Path
 # repo_dir = Path(__file__).parent.parent  # Adjust depending on `conftest.py` location
 repo_dir = Path(__file__).parent  # Adjust depending on `conftest.py` location
 sys.path.insert(0, str(repo_dir))
+
+# i think pyproject.toml didnt work... but might not be needed with proper config from poetry

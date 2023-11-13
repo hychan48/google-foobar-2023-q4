@@ -1,23 +1,71 @@
 [tool.poetry]
 name = "google-foobar-2023-q4"
-version = "0.2.0"
-description = "https://github.com/hychan48/google-foobar-2023-q4"
+version = "0.2.1"
+description = "JC's Google Foobar Journey - 2023 Q4"
+homepage = "https://github.com/hychan48/google-foobar-2023-q4"
+repository = "https://github.com/hychan48/google-foobar-2023-q4"
+keywords = ["google", "foobar", "python"]
 authors = ["JC <jchan48@gmail.com>"]
 readme = "README.md"
+# https://python-poetry.org/docs/pyproject/#readme
 license = "AGPL-3.0"
+
+# wheell name
+# google_foobar_2023_q4-0.2.0-py3-none-any.whl
+# i might need to add 'namespace' to it. but let's try with just pipx / poetry with github first
+packages = [
+    # Not an ideal name for the package
+    { include = "levels" },
+    { include = "cli" },
+    # has subpackages in a way. maybe should change the naming of this
+    # regret not linking to the commit instead of main
+    # we'll see
+]
+# optimize package size later
+# exclude = ["my_package/excluded.py"]
+
+# for pypi:
+# https://pypi.org/classifiers/
+classifiers = [
+    "Environment :: Console",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Intended Audience :: Education",
+    "Natural Language :: English",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+#    "Topic :: Software Development :: Build Tools",
+#    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+#[tool.poetry.urls]
+#"Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
+
+# https://python-poetry.org/docs/pyproject/#scripts
+[tool.poetry.scripts]
+# hychan48="levels:main"
+hychan48-cake-is-not-a-lie="cli:fire_cake"
+hychan48-dont-get-volunteered="cli:fire_knight_bfs"
+#hychan48-cake-is-not-a-lie= { reference = "levels.q1.src.solution:solution", type = "console" }
+#devtest = { reference = "mypackage:test.run_tests", extras = ["test"], type = "console" }
+
+
 [tool.poetry.dependencies]
-python = "^3.11"
-jupyter = "^1.0.0"
+# github action covers only 3.9, 3.10, 3.11
+python = ">=3.9,<3.12"
+#python = "^3.11"
+fire = "^0.5.0"
 
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
+jupyter = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+
+
 [tool.pytest.ini_options]
+# ahh so, i was missing package in poetry... so hmm try removing this and see if it works
 pythonpath = [
 #    "src", "src2",
     "levels"

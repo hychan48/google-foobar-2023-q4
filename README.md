@@ -1,17 +1,18 @@
 # google-foobar-2023-q4
-## Background
-* https://github.com/hychan48/google-foobar-2023-q4
-* I searched proxy vs load balancer. and at first I found it mad sketch
-* had to verify it's SSL/TLS cert and Google was foobar was.
+## Production
+<!-- todo
+add some assets
+-->
 
-## Assumptions
-* So far it looks like it's either Python 2.7 or Java 8
-* I'm going to use Python 3.11.6, using basic syntax it should be backwards compatible with 2.7
-  * Also, I have PyCharm installed already
-* TDD with PyTest
+## Installation
+```bash
+pipx install git+https://github.com/hychan48/google-foobar-2023-q4.git
+#pipx run --spec git+
 
+hychan48-cake-is-not-a-lie abab
+# Returns 2
 
-# Levels
+```
 ## Level 1
 * [readme_q1_the-cake-isnot-a-lie.md](levels/q1/readme_q1_the-cake-isnot-a-lie.md)
 ```bash
@@ -32,6 +33,20 @@ pnpm run test:q1
 ```bash
 pytest ./levels/q2/tests/solutions_bfs_test.py
 ```
+
+## Background
+* https://github.com/hychan48/google-foobar-2023-q4
+* I searched proxy vs load balancer. and at first I found it mad sketch
+* had to verify it's SSL/TLS cert and Google was foobar was.
+
+## Assumptions
+* So far it looks like it's either Python 2.7 or Java 8
+* I'm going to use Python 3.11.6, using basic syntax it should be backwards compatible with 2.7
+  * Also, I have PyCharm installed already
+* TDD with PyTest
+
+
+
 
 # Quick Checklist
 - [ ] Documentation
@@ -59,6 +74,43 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
     - Unit Tests - PyTest
 
 # dev setup
+```bash
+# there's also some helpers
+conda activate ./venv
+
+# newer method
+
+# pull
+# bats installs differently? weird
+# mostly for bats
+git pull --recurse-submodule
+
+## bats clones to test/ by default
+# 
+
+# first time
+# pipx / conda(mamba) / poetry
+
+git submodule add https://github.com/bats-core/bats-core.git test/bats
+git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
+git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+git commit -m 'Add bats-support library'
+
+tree test/bats/bin
+mkdir -p ~/.local/bin
+rm ~/.local/bin/bats
+ln -s $PWD/test/bats/bin/bats ~/.local/bin/bats 
+ln -s $PWD/test/bats/bin/bats /usr/local/bin/bats
+ln -s ./test/bats/bin/bats /usr/local/bin/bats
+ls -l /usr/local/bin/bats
+bats
+export PATH=$PATH:~/.local/bin
+
+# git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
+
+```
+
+
 ```powershell
 # cygwin / windows 11
 pnpm i
