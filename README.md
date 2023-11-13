@@ -74,6 +74,22 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
     - Unit Tests - PyTest
 
 # dev setup
+```bash
+# newer method
+
+# pull
+git pull --recurse-submodule
+
+## bats clones to test/ by default
+# 
+
+# first time
+git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
+git commit -m 'Add bats-support library'
+
+```
+
+
 ```powershell
 # cygwin / windows 11
 pnpm i
