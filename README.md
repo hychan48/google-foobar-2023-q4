@@ -9,7 +9,7 @@ hychan48-cake-is-not-a-lie --help
 ### Installation
 ```bash
 # https://replit.com/@jasonchan51/hychan48-google-foobar-2023-q4
-pipx install google-foobar-2023-q4 
+pipx install hychan48-google-foobar-2023-q4
 
 hychan48-cake-is-not-a-lie --help
 hychan48-cake-is-not-a-lie abab
