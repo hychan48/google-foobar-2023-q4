@@ -75,6 +75,9 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
 
 # dev setup
 ```bash
+# there's also some helpers
+conda activate ./venv
+
 # newer method
 
 # pull
@@ -90,12 +93,16 @@ git pull --recurse-submodule
 
 git submodule add https://github.com/bats-core/bats-core.git test/bats
 git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
-# git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
 git commit -m 'Add bats-support library'
+
 tree test/bats/bin
 mkdir -p ~/.local/bin
 rm ~/.local/bin/bats
 ln -s $PWD/test/bats/bin/bats ~/.local/bin/bats 
+ln -s $PWD/test/bats/bin/bats /usr/local/bin/bats
+ln -s ./test/bats/bin/bats /usr/local/bin/bats
+ls -l /usr/local/bin/bats
 bats
 export PATH=$PATH:~/.local/bin
 
