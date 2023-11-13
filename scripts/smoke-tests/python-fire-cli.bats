@@ -1,6 +1,14 @@
 #!/usr/bin/env bats
 # Testing fire and poetry CLI
 # https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test
+# install bats-core and bats-assert
+# https://github.com/ztombol/bats-docs
+
+
+# recommend install if not using npm,... interserting
+# git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
+# git commit -m 'Add bats-support library'
+
 # setup_file() {
 #     # load 'test_helper/common-setup'
 #     # _common_setup
@@ -8,9 +16,19 @@
 #     # export PORT
 # }
 # oh nice okay
+
 @test "hi" { 
   echo "hi"
+
   #  ; assert_output "hi" 
+}
+
+# commends do run... so
+@test "comments" {
+  skip "sup"
+  echo fail
+  # https://github.com/bats-core/bats-assert
+
 }
 
 # @test "hi" { 
