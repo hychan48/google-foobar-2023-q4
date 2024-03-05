@@ -89,24 +89,20 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
     - Lint - Flake8
     - Unit Tests - PyTest
 
-## Quick setup
+## Quick Dev Setup
+### Non-Dev Container
 ```bash
-# Using micromamba aliased as conda
+# install micromamba (aliased as conda) / miniforge3
 conda env create -f environment.yml
-conda activate ./envs
+conda activate hychan48-google-foobar
+# Using micromamba aliased as conda
 poety install
+```
+### Dev Container
+```bash
 # smoke test
 poetry --quiet run hychan48-cake-is-not-a-lie abab
 # output: 2
-```
-### Backup Conda Environment
-```bash
-# Backup
-conda env export --from-history > environment.yml
-conda env export > environment.full.yml
-
-# window caveats...
-# https://stackoverflow.com/questions/49638329/how-to-create-conda-env-with-both-name-and-path-specified
 ```
 ### PyTest in Poetry
 * BDD/TDD (Behavior Driven Development / Test Driven Development)
@@ -117,19 +113,30 @@ pytest levels/q2/tests/solutions_bfs_test.py
 poetry install && poetry --quiet run pytest-cake
 poetry install && poetry --quiet run pytest-bfs
 ```
-###
-# # Workflows
+
+### Backup Conda Environment
+```bash
+# Backup
+conda env export --from-history > environment.yml
+conda env export > environment.full.yml
+
+# window caveats...
+# https://stackoverflow.com/questions/49638329/how-to-create-conda-env-with-both-name-and-path-specified
+```
+
+## GitHub Actions Workflows
 1. [ ] Build Wheel
   * [ ] Add PyTest after adding new features
 2. [ ] Publish to PyPi
 
-# Folder Structure
+
+
+# Dev Notes
+## Folder Structure
 * levels -> src
 * scripts
 * cli
   * for Google Fire and Poetry to work properly
-
-# Dev Notes
 ```bash
 # interesting behavior on ps1
 poetry run hychan48-cake-is-not-a-lie --help
