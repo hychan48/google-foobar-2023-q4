@@ -31,8 +31,10 @@ hychan48-cake-is-not-a-lie abab
 
 # GitHub action runs the PyTests:
 pytest levels/q1/tests/solutions_test.py
-# JavaScript solution
+
+# JavaScript solution - only for q1
 pnpm run test:q1
+
 ```
 
 ## level 2 
@@ -106,12 +108,34 @@ conda env export > environment.full.yml
 # window caveats...
 # https://stackoverflow.com/questions/49638329/how-to-create-conda-env-with-both-name-and-path-specified
 ```
+### PyTest in Poetry
+* BDD/TDD (Behavior Driven Development / Test Driven Development)
+```bash
+pytest levels/q1/tests/solutions_test.py
+pytest levels/q2/tests/solutions_bfs_test.py
+# or
+poetry install && poetry --quiet run pytest-cake
+poetry install && poetry --quiet run pytest-bfs
+```
+###
+# # Workflows
+1. [ ] Build Wheel
+  * [ ] Add PyTest after adding new features
+2. [ ] Publish to PyPi
+
+# Folder Structure
+* levels -> src
+* scripts
+* cli
+  * for Google Fire and Poetry to work properly
+
 # Dev Notes
 ```bash
 # interesting behavior on ps1
 poetry run hychan48-cake-is-not-a-lie --help
 # conda create --prefix ./envs --name google-foorbar-2023-q4 python=3.11,pipx,poetry # prefix or name
 conda create --prefix ./envs -y python=3.11,pipx,poetry
+conda create --prefix ./envs -y python=3.12,pipx,poetry # is the new default
 
 # conda create --prefix ./envs -y python=3.12,pipx,poetry
 ```

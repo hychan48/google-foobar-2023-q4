@@ -42,10 +42,16 @@ classifiers = [
 [tool.poetry.scripts]
 # hychan48-google-foobar-2023-q4="cli:fire_cake"
 hychan48-cake-is-not-a-lie="cli:fire_cake"
+pytest-cake="cli:pytest_cake"
+pytest-bf="cli:pytest_knight_bfs"
 hychan48-dont-get-volunteered="cli:fire_knight_bfs"
+
+
 #hychan48-cake-is-not-a-lie= { reference = "levels.q1.src.solution:solution", type = "console" }
 #devtest = { reference = "mypackage:test.run_tests", extras = ["test"], type = "console" }
-
+# Dev scripts
+# pytest-q1="python -m pytest levels/q1/tests/solutions_test.py"
+# test-solutions = "pytest levels/q1/tests/solutions_test.py" # doesnt work
 
 [tool.poetry.dependencies]
 # github action covers only 3.9, 3.10, 3.11
@@ -68,5 +74,7 @@ build-backend = "poetry.core.masonry.api"
 # ahh so, i was missing package in poetry... so hmm try removing this and see if it works
 pythonpath = [
 #    "src", "src2",
-    "levels"
+    "levels",# needed to run pytest
+    # "levels/q1/tests/solutions_test.py",
+    # "levels/q2/tests/solutions_test.py",
 ]
