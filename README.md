@@ -142,6 +142,16 @@ conda env export > environment.full.yml
 # window caveats...
 # https://stackoverflow.com/questions/49638329/how-to-create-conda-env-with-both-name-and-path-specified
 ```
+# Conda todo
+```bash
+conda install conda-forge::nodejs -y
+corepack enable # enables pnpm etc. node is useful overall
+yarn install # EPERM again... need to move the store to a different location... or something
+yarn run test:q1 # constantly having issues with devcontainer
+# created some tmp files? from which command?
+conda install conda-forge::jupyterlab -y
+
+```
 
 ## GitHub Actions Workflows
 1. [ ] Build Wheel
