@@ -2,8 +2,14 @@
 * when adding new tool.poetry.scripts
 * [pyproject.toml[tool.poetry.scripts]](../pyproject.toml#[tool.poetry.scripts])
 ```bash
+# cli dev assist
 poetry install && poetry --quiet run pytest-cake
 poetry install && poetry --quiet run pytest-bfs
+
+# help
+poetry install && poetry --quiet run hychan48-cake-is-not-a-lie --help
+PAGER=cat poetry --quiet run hychan48-cake-is-not-a-lie --help
+poetry run hychan48-cake-is-not-a-lie --help
 
 # quick pytest smoke tests
 pytest levels/q1/tests/solutions_test.py
