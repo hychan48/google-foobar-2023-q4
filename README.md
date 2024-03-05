@@ -1,11 +1,15 @@
-# google-foobar-2023-q4
+# @hychan48/google-foobar-2023-q4
 ## Production
 <!-- todo
 add some assets
 # pip install google-foobar-2023-q4
 hychan48-cake-is-not-a-lie --help
 -->
-
+<!-- todo add links for github, pypi, docker
+Remove dev code from the main readme
+Check with guidelines
+asciinema / jyupter on repl.it?
+-->
 ### Installation
 ```bash
 # https://replit.com/@jasonchan51/hychan48-google-foobar-2023-q4
@@ -34,7 +38,6 @@ pytest levels/q1/tests/solutions_test.py
 
 # JavaScript solution - only for q1
 pnpm run test:q1
-
 ```
 
 ## level 2 
@@ -72,7 +75,7 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
   - Reword Question and Keywords
     - [ ] readme_q.template.md
   - Principles
-    - TDD
+    - TDD / BDD
     - Quick and dirty
       - Unless the question piques my research interest
       - 7 days per question seems like a lot of time
