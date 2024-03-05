@@ -94,7 +94,7 @@ conda env create -f environment.yml
 conda activate ./envs
 poety install
 # smoke test
-poetry run hychan48-cake-is-not-a-lie abab
+poetry --quiet run hychan48-cake-is-not-a-lie abab
 # output: 2
 ```
 ### Backup Conda Environment
@@ -102,6 +102,9 @@ poetry run hychan48-cake-is-not-a-lie abab
 # Backup
 conda env export --from-history > environment.yml
 conda env export > environment.full.yml
+
+# window caveats...
+# https://stackoverflow.com/questions/49638329/how-to-create-conda-env-with-both-name-and-path-specified
 ```
 # Dev Notes
 ```bash
