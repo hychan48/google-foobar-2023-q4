@@ -35,7 +35,8 @@ hychan48-cake-is-not-a-lie abab
 
 # GitHub action runs the PyTests:
 pytest levels/q1/tests/solutions_test.py
-# JavaScript solution
+
+# JavaScript solution - only for q1
 pnpm run test:q1
 ```
 
@@ -90,13 +91,136 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
   - [ ] Workflow with GitHub actions
     - Lint - Flake8
     - Unit Tests - PyTest
-    - Black / isort / mypy (might not work for 2.7)
 
-# dev setup
+## Quick Dev Setup
+### Non-Dev Container
+```bash
+# install micromamba (aliased as conda) / miniforge3
+conda env create -f environment.yml
+conda activate hychan48-google-foobar
+# Using micromamba aliased as conda
+poety install
+```
+### Dev Container
+```bash
+# smoke test
+poetry --quiet run hychan48-cake-is-not-a-lie abab
+# output: 2
+```
+### PyTest in Poetry
+* BDD/TDD (Behavior Driven Development / Test Driven Development)
+```bash
+pytest levels/q1/tests/solutions_test.py
+pytest levels/q2/tests/solutions_bfs_test.py
+# or
+poetry install && poetry --quiet run pytest-cake
+poetry install && poetry --quiet run pytest-bfs
+```
+
+### Backup Conda Environment
+```bash
+# Backup
+conda env export --from-history > environment.yml
+conda env export > environment.full.yml
+
+# window caveats...
+# https://stackoverflow.com/questions/49638329/how-to-create-conda-env-with-both-name-and-path-specified
+```
+
+## GitHub Actions Workflows
+1. [ ] Build Wheel
+  * [ ] Add PyTest after adding new features
+2. [ ] Publish to PyPi
 
 
 
+# Dev Notes
+## Folder Structure
+* levels -> src
+* scripts
+* cli
+  * for Google Fire and Poetry to work properly
+```bash
+# interesting behavior on ps1
+poetry run hychan48-cake-is-not-a-lie --help
+# conda create --prefix ./envs --name google-foorbar-2023-q4 python=3.11,pipx,poetry # prefix or name
+conda create --prefix ./envs -y python=3.11,pipx,poetry
+conda create --prefix ./envs -y python=3.12,pipx,poetry # is the new default
 
+# conda create --prefix ./envs -y python=3.12,pipx,poetry
+```
+
+```bash
+# there's also some helpers
+# conda env remove -n google-foorbar-2023-q4
+# conda activate ./venv
+
+# newer method
+
+# pull
+# bats installs differently? weird
+# mostly for bats
+git pull --recurse-submodule
+
+## bats clones to test/ by default
+# 
+
+# first time
+# pipx / conda(mamba) / poetry
+
+git submodule add https://github.com/bats-core/bats-core.git test/bats
+git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
+git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+git commit -m 'Add bats-support library'
+
+tree test/bats/bin
+mkdir -p ~/.local/bin
+rm ~/.local/bin/bats
+ln -s $PWD/test/bats/bin/bats ~/.local/bin/bats 
+ln -s $PWD/test/bats/bin/bats /usr/local/bin/bats
+ln -s ./test/bats/bin/bats /usr/local/bin/bats
+ls -l /usr/local/bin/bats
+bats
+export PATH=$PATH:~/.local/bin
+
+# git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
+
+```
+
+
+```powershell
+# cygwin / windows 11
+pnpm i
+# haha didnt work:
+conda create -n foobar-py27 python=2.7
+conda create -n google-foorbar-2023-q4 python=3.11
+
+conda activate google-foorbar-2023-q4
+
+# update pipx
+pipx --version
+python -m pip install --user pipx
+python -m pipx ensurepath
+
+# poetry... too basic to need it... todo: move to other section
+# might not be needed after all...
+pipx install poetry
+poetry --version
+poetry init
+
+# poetry might not be needed after all...
+poetry add pytest --group dev
+#poetry shell
+# 3.11.4 vs 3.11.6... interesting
+```
+
+### Install pytest
+```bash
+conda activate google-foorbar-2023-q4
+python -m pip install pytest
+
+python -m pip install -r requirements.txt
+```
 ## Appendix
 * [/api/v1/files/](https://foobar.withgoogle.com/api/v1/files/)
 

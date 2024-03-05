@@ -1,0 +1,7 @@
+name: hychan48-google-foobar
+channels:
+- conda-forge
+dependencies:
+- pipx
+- poetry
+

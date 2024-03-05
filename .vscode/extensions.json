@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "tamasfe.even-better-toml",
+    "ms-python.isort",
+    "ms-python.python",
+    "ms-python.autopep8",
+    "cameron.vscode-pytest",
+    "foxundermoon.shell-format",
+    "jetmartin.bats"
+  ]
+}
