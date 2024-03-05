@@ -101,6 +101,16 @@ conda deactivate
 conda activate hychan48-google-foobar
 # Using micromamba aliased as conda
 poetry install
+
+# add this to path:
+command -v bats
+mkdir -p $HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin
+ln -s $PWD/test/bats/bin/bats $HOME/.local/bin/bats
+which bats
+whence bats
+ls -l $HOME/.local/bin/bats
+pipx ensurepath # will add $HOME/.local/bin to path
 ```
 ### Dev Container
 ```bash
