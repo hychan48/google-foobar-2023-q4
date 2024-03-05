@@ -97,13 +97,15 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
 ```bash
 # install micromamba (aliased as conda) / miniforge3
 conda env create -f environment.yml
+conda deactivate
 conda activate hychan48-google-foobar
 # Using micromamba aliased as conda
-poety install
+poetry install
 ```
 ### Dev Container
 ```bash
 # smoke test
+pytest levels/q1/tests/solutions_test.py # cake is not a lie
 poetry --quiet run hychan48-cake-is-not-a-lie abab
 # output: 2
 ```
@@ -132,7 +134,14 @@ conda env export > environment.full.yml
   * [ ] Add PyTest after adding new features
 2. [ ] Publish to PyPi
 
-
+### Requirements.txt
+```bash
+# Might need to be manually updated for now. Add to CI/CD
+poetry export -f requirements.txt --output requirements.txt
+poetry export -f requirements.txt --output requirements.txt --without dev
+# Warning: poetry-plugin-export will not be installed by default in a future version of Poetry.
+# revisit this. it gave a wrong requirements.txt
+```
 
 # Dev Notes
 ## Folder Structure
@@ -144,9 +153,11 @@ conda env export > environment.full.yml
 # interesting behavior on ps1
 poetry run hychan48-cake-is-not-a-lie --help
 # conda create --prefix ./envs --name google-foorbar-2023-q4 python=3.11,pipx,poetry # prefix or name
+
 conda create --prefix ./envs -y python=3.11,pipx,poetry
 conda create --prefix ./envs -y python=3.12,pipx,poetry # is the new default
 
+conda deactivate
 # conda create --prefix ./envs -y python=3.12,pipx,poetry
 ```
 
