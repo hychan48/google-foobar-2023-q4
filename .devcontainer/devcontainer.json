@@ -11,7 +11,8 @@
 			"version": "latest",
 			"channels": "conda-forge",
 			"packages": "pipx poetry",
-			"envFile": "${localWorkspaceFolder}/environment.yml",
+			// "envFile": "${localWorkspaceFolder}/environment.yml",//this defn worked, which is odd
+			"envFile": "environment.yml",
 			//https://containers.dev/implementors/json_reference/
 			//metadata reference
 			// "envFile": "/workspaces/google-foobar-2023-q4/environment.yml",//find the ${envName} in the envFile and replace it with the value of "envName"
