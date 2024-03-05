@@ -87,10 +87,36 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
     - Lint - Flake8
     - Unit Tests - PyTest
 
-# dev setup
+## Quick setup
+```bash
+# Using micromamba aliased as conda
+conda env create -f environment.yml
+conda activate ./envs
+poety install
+# smoke test
+poetry run hychan48-cake-is-not-a-lie abab
+# output: 2
+```
+### Backup Conda Environment
+```bash
+# Backup
+conda env export --from-history > environment.yml
+conda env export > environment.full.yml
+```
+# Dev Notes
+```bash
+# interesting behavior on ps1
+poetry run hychan48-cake-is-not-a-lie --help
+# conda create --prefix ./envs --name google-foorbar-2023-q4 python=3.11,pipx,poetry # prefix or name
+conda create --prefix ./envs -y python=3.11,pipx,poetry
+
+# conda create --prefix ./envs -y python=3.12,pipx,poetry
+```
+
 ```bash
 # there's also some helpers
-conda activate ./venv
+# conda env remove -n google-foorbar-2023-q4
+# conda activate ./venv
 
 # newer method
 

@@ -1,0 +1,10 @@
+name: base
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - conda[version='>=23.11.0']
+  - mamba[version='>=1.5.5']
+  - miniforge_console_shortcut=1
+prefix: C:\Users\Jason\miniforge3
