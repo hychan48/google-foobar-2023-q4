@@ -4,6 +4,10 @@
 ```bash
 poetry install && poetry --quiet run pytest-cake
 poetry install && poetry --quiet run pytest-bfs
+
+# quick pytest smoke tests
+pytest levels/q1/tests/solutions_test.py
+pytest levels/q2/tests/solutions_bfs_test.py
 ````
 ## Update packages
 ```bash
