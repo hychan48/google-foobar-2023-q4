@@ -37,7 +37,8 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 	// "postCreateCommand": "echo 'alias conda=micromamba' >> ~/.zshrc; poetry install"
-	"postCreateCommand": "${localWorkspaceFolder}/scripts/dev-setup/postCreateCommand.sh"
+	"postCreateCommand": "scripts/dev-setup/postCreateCommand.sh" //haha omg windows path
+	// "postCreateCommand": "${localWorkspaceFolder}/scripts/dev-setup/postCreateCommand.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

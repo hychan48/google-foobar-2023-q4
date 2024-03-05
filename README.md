@@ -113,6 +113,7 @@ ln -s $PWD/test/bats/bin/bats $HOME/.local/bin/bats # check
 which -a bats # check again
 whence bats
 ls -l $HOME/.local/bin/bats
+tree $HOME/.local/bin
 pipx ensurepath # will add $HOME/.local/bin to path
 ```
 ### Dev Container
