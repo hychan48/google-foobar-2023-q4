@@ -36,9 +36,18 @@ hychan48-cake-is-not-a-lie abab
 # GitHub action runs the PyTests:
 pytest levels/q1/tests/solutions_test.py
 
+```
+[![asciicast](https://asciinema.org/a/645735.svg)](https://asciinema.org/a/645735)
+[![asciicast](https://asciinema.org/a/645736.svg)](https://asciinema.org/a/645736)
+
+
+### JavaScript Solution
+```bash
 # JavaScript solution - only for q1
 pnpm run test:q1
 ```
+[![asciicast](https://asciinema.org/a/645734.svg)](https://asciinema.org/a/645734)
+
 
 ## level 2 
 ### Question 1
@@ -52,6 +61,8 @@ pnpm run test:q1
 hychan48-dont-get-volunteered 0 1 # Returns 3
 pytest ./levels/q2/tests/solutions_bfs_test.py
 ```
+[![asciicast](https://asciinema.org/a/645737.svg)](https://asciinema.org/a/645737)
+[![asciicast](https://asciinema.org/a/645739.svg)](https://asciinema.org/a/645739)
 
 ## Background
 * https://github.com/hychan48/google-foobar-2023-q4

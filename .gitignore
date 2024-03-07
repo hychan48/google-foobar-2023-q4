@@ -180,3 +180,4 @@ dev-notes/experiments/
 **/envs/**
 
 _tmp*
+tmp/

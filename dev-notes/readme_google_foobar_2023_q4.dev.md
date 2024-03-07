@@ -283,3 +283,121 @@ conda install conda-forge::jupyterlab -y
 
 micromamba run -n base mycommand
 ```
+
+
+# PNPM Debug inside dev container
+* changed wsl docker engine to same drive
+  * had to reboot
+* had to disable intergration and re-check
+* added SHELL and pnpm to ~/.zshrc already
+* vscode volume... interesting
+  * it's only vscode-server?
+```bash
+conda install conda-forge::nodejs -y
+corepack enable # enables pnpm etc. node is useful overall
+pnpm --version
+printenv SHELL
+echo 'export SHELL=`which zsh`' >> ~/.zshrc # added to postCreateCommand.sh
+export SHELL=`which zsh`
+printenv XDG_DATA_HOME
+pnpm setup
+source ~/.zshrc
+printenv PNPM_HOME
+pnpm i # works fine with root... maybe there is a cache issue? 
+pnpm i -g tldr # works perfectly.... for both root and vscode in windows
+pnpm setup
+pnpm uninstall -g tldr # works perfectly.... for both root and vscode in windows
+pnpm store path
+pnpm config list
+pnpm doctor
+pnpm store status
+
+# set?
+pnpm config get store-dir
+pnpm config set store-dir $PNPM_HOME/store
+rm -rf .pnpm-store # interesting...
+rm pnpm-lock.yaml
+pnpm install
+
+# hmm... 
+ls -dal .pnpm-store
+cd ./pnpm-store
+tree $PNPM_HOME -L 1
+pnpm i -g tldr # works fine...
+# /home/vscode/.local/share/pnpm/global/5:
+pnpm init
+pnpm install --verbose
+pnpm install --help
+rm pnpm-lock.yaml
+pnpm install
+```
+* revisit... giving up
+* might need a rebuild no cache
+* root is the easiest with refs / more than one drive
+* [ ] Revisit custom mount
+  * using root and it works
+
+# asciinema record
+* [ ] rec
+  * [ ] prompt
+* [ ] upload
+* [ ] share with github as markdown
+```bash
+mkdir -p docs/assets
+cd /workspaces/google-foobar-2023-q4
+
+# Recordings - maybe not?
+# mkdir -p tmp/
+# cd tmp
+# do it as root?
+
+# 1.
+pipx install asciinema
+asciinema rec --help
+# defualt
+CONDA_PROMPT_MODIFIER="(base) "
+unset CONDA_PROMPT_MODIFIER
+export CONDA_PROMPT_MODIFIER=""
+export PROMPT="hychan48%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} "
+# didnt work
+code ~/.zshrc # just update this manually... arg
+source ~/.zshrc # just update this manually... arg
+
+asciinema rec -t "pnpm run test:q1" -i 5 --cols 80 --rows 24 --overwrite --env PROMPT --env CONDA_PROMPT_MODIFIER tmp/pnpm-run-test-q1.cast
+exit
+pnpm run test:q1
+exit
+ls -l
+asciinema cat pnpm-run-test-q1.cast
+asciinema play pnpm-run-test-q1.cast
+
+# Upload afterwards
+asciinema upload tmp/pnpm-run-test-q1.cast
+## follow instructions
+
+rsync tmp/*.cast docs/assets/
+```
+
+## Tasks
+```bash
+asciinema rec -t "hychan48-cake-is-not-a-lie abab" -i 5 --cols 80 --rows 24 --overwrite --env PROMPT --env CONDA_PROMPT_MODIFIER tmp/hychan48-cake-is-not-a-lie-abab.cast
+asciinema upload tmp/hychan48-cake-is-not-a-lie-abab.cast
+```
+```bash
+asciinema rec -t "pytest levels/q1/tests/solutions_test.py" -i 5 --cols 80 --rows 24 --overwrite --env PROMPT --env CONDA_PROMPT_MODIFIER tmp/pytest-levels-q1-tests-solutions_test.py.cast
+asciinema upload tmp/pytest-levels-q1-tests-solutions_test.py.cast
+```
+```bash
+asciinema rec -t "hychan48-dont-get-volunteered 0 1" -i 5 --cols 80 --rows 24 --overwrite --env PROMPT --env CONDA_PROMPT_MODIFIER tmp/hychan48-dont-get-volunteered-0-1.cast
+asciinema upload tmp/hychan48-dont-get-volunteered-0-1.cast
+```
+```bash
+asciinema rec -t "pytest ./levels/q2/tests/solutions_bfs_test.py" -i 5 --cols 80 --rows 24 --overwrite --env PROMPT --env CONDA_PROMPT_MODIFIER tmp/pytest-levels-q2-tests-solutions_test.py.cast
+# max col -yep... so it was spilling because of the col
+asciinema rec -t "pytest ./levels/q2/tests/solutions_bfs_test.py" -i 5 --rows 24 --overwrite --env PROMPT --env CONDA_PROMPT_MODIFIER tmp/pytest-levels-q2-tests-solutions_test.py.cast
+asciinema rec -t "pytest ./levels/q2/tests/solutions_bfs_test.py" -i 5 --cols 100 --rows 24 --overwrite --env PROMPT --env CONDA_PROMPT_MODIFIER tmp/pytest-levels-q2-tests-solutions_test.py.cast
+pytest levels/q2/tests/solutions_bfs_test.py
+asciinema upload tmp/pytest-levels-q2-tests-solutions_test.py.cast
+asciinema cat tmp/pytest-levels-q2-tests-solutions_test.py.cast
+asciinema play tmp/pytest-levels-q2-tests-solutions_test.py.cast
+```
