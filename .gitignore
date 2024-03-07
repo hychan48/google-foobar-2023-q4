@@ -178,3 +178,5 @@ cython_debug/
 scripts/smoke-tests/python-fire-cli.bats
 dev-notes/experiments/
 **/envs/**
+
+_tmp*

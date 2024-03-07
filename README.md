@@ -146,11 +146,85 @@ conda env export > environment.full.yml
 ```bash
 conda install conda-forge::nodejs -y
 corepack enable # enables pnpm etc. node is useful overall
+yarn --version
+pnpm --version
+# ~/.local/share/pnpm/store/v3
+# https://pnpm.io/npmrc#store-dir
+printenv PNPM_HOME
+ls -l $PNPM_HOME/store
+ls -l $PNPM_HOME/store/v3
+pnpm config set store-dir $PNPM_HOME/store
+pnpm store status
+pnpm store path
+# defn works... but i dont know if it can be there
+
+####
+printenv XDG_DATA_HOME
+which pnpm
+ls -l `which pnpm`
+pnpm config list
+pnpm config list --global
+# default location are ~/.local/share/pnpm/store or echo $XDG_DATA_HOME/pnpm/store
+export SHELL=`which zsh`
+pnpm setup # relies on SHELL variable
+source ~/.zshrc
+printenv PNPM_HOME
+pnpm config list
+pnpm store path
+pnpm doctor
+pnpm bin # is this the problem? cuz global worked
+pnpm bin --global # print
+pnpm install -g tldr # worked
+
+# https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+# also need container user? it maps to root for windows..
+# containerUser: vscode?
+# https://code.visualstudio.com/remote/advancedcontainers/add-local-file-mount
+# add mount?
+
+# corepack use pnpm@latest
+
+tldr ls
+source ~/.zshrc
+pnpm i
+ls -dl $PNPM_HOME/store
+mkdir -p $PNPM_HOME/store
+ls -dl $PNPM_HOME
+ls -dl ~/.local/share
+
+sudo chsh --shell /bin/zsh vscode
+sudo chsh --shell /usr/bin/zsh vscode
+sudo chsh --shell `which zsh` vscode
+sudo chsh --shell `which zsh` $USER
+sudo echo chsh --shell `which zsh` $USER
+sudo echo "chsh --shell `which zsh` vscode"
+export SHELL=`which zsh`
+printenv SHELL # og was /bin/bash though
+getent passwd $USER
+getent passwd
+# wait is it supposed to be just /bin/zsh
+chsh -s `which zsh`
+printenv SHELL
+# /bin/bash
+which -a zsh
+sudo passwd
+# check shell? it appended to .bashrc?
+
+printenv XDG_DATA_HOME
+printenv SHELL
+echo $XDG_DATA_HOME/pnpm/store
+rm _tmp* # from pnpm...
+ls -dl ~/.local/share
+tree ~/.local/share/
+# ( set -ux echo $XDG_DATA_HOME/pnpm/store)
+pnpm store path # check eperm again
 yarn install # EPERM again... need to move the store to a different location... or something
 yarn run test:q1 # constantly having issues with devcontainer
 # created some tmp files? from which command?
 conda install conda-forge::jupyterlab -y
 
+
+micromamba run -n base mycommand
 ```
 
 ## GitHub Actions Workflows
@@ -259,3 +333,21 @@ python -m pip install -r requirements.txt
 ## Appendix
 * [/api/v1/files/](https://foobar.withgoogle.com/api/v1/files/)
 
+
+
+# docker wsl setting
+
+```ps1
+# ~/AppData/Local
+write-host $env:LOCALAPPDATA 
+write-host $env:LOCALAPPDATA\Docker\wsl
+# Get-ChildItem -Path . -Recurse -Force | Where-Object { $_.Attributes -match 'ReparsePoint' } | Select-Object FullName,Target
+Get-ChildItem -Path $env:LOCALAPPDATA\Docker -Recurse -Force | Where-Object { $_.Attributes -match 'ReparsePoint' } | Select-Object FullName,Target
+ # changed default $env:LOCALAPPDATA\Docker\wsl to another. the junction didnt work anyway
+
+#  $HOME\AppData\Local\Docker\wsl
+# interesting... so if not it creates a dockerdesktopwsl folder
+# there's a swap container option,... interestng
+wsl --shutdown first..
+oh crap it was migating
+```

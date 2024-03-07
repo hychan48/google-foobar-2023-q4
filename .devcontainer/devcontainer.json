@@ -38,12 +38,26 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 	// "postCreateCommand": "echo 'alias conda=micromamba' >> ~/.zshrc; poetry install"
-	"postCreateCommand": "scripts/dev-setup/postCreateCommand.sh" //haha omg windows path
+	"postCreateCommand": "scripts/dev-setup/postCreateCommand.sh", //haha omg windows path
 	// "postCreateCommand": "${localWorkspaceFolder}/scripts/dev-setup/postCreateCommand.sh"
 
 	// Configure tool-specific properties.
-	// "customizations": {},
+	//https://stackoverflow.com/questions/55987337/visual-studio-code-remote-containers-change-shell
+	"customizations": {
+		"vscode": {
+			"settings": {
+					"terminal.integrated.defaultProfile.linux": "zsh",
+					"terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } }
+			}
+		}
+		// },
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	/* required! for w/e reason maybe it's a windows thing */
+	"remoteUser": "vscode"
+	// https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+	// mounts as root as default...
+	//# containerUser: vscode?
 }
