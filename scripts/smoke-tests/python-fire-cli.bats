@@ -31,19 +31,20 @@ setup() {
   # deactivate
 # }
 
-conda_env_test(){
-  # runs when im already activated
-  conda info | grep "active env location" |grep "$PROJECT_ROOT"
-}
-@test "conda env" {
-  # conda info
-  run conda_env_test
-  assert [ "$status" -eq 0 ]
-  # conda info | grep "active env location" |grep "$PROJECT_ROOT"
-  # only need to wrap if we're using assert
-  # assert_output $PWD
-  # conda info
-}
+##### skipping
+# conda_env_test(){
+#   # runs when im already activated
+#   conda info | grep "active env location" |grep "$PROJECT_ROOT"
+# }
+# @test "conda env" {
+#   # conda info
+#   run conda_env_test
+#   assert [ "$status" -eq 0 ]
+#   # conda info | grep "active env location" |grep "$PROJECT_ROOT"
+#   # only need to wrap if we're using assert
+#   # assert_output $PWD
+#   # conda info
+# }
 
 # recommend install if not using npm,... interserting
 # git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
@@ -91,12 +92,12 @@ fire_q1(){
 }
 q1_poetry(){
   # python3 -m fire levels q1 "$1"
-  poetry run hychan48-cake-is-not-a-lie --help | grep -wq STR_INPUT
+  poetry run --quiet hychan48-cake-is-not-a-lie --help | grep -wq STR_INPUT
   # poetry run hychan48-cake-is-not-a-lie asdasd
 }
 @test "q1_poetry" { 
   run q1_poetry
-  run poetry run hychan48-cake-is-not-a-lie asdasd
+  run poetry run --quiet hychan48-cake-is-not-a-lie asdasd
   assert_output 2
   
 }

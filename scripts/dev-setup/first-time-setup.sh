@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Setup
 # conda / mamba / pipx / poetry
 # ensure git for bats

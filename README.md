@@ -36,9 +36,18 @@ hychan48-cake-is-not-a-lie abab
 # GitHub action runs the PyTests:
 pytest levels/q1/tests/solutions_test.py
 
+```
+[![asciicast](https://asciinema.org/a/645735.svg)](https://asciinema.org/a/645735)
+[![asciicast](https://asciinema.org/a/645736.svg)](https://asciinema.org/a/645736)
+
+
+### JavaScript Solution
+```bash
 # JavaScript solution - only for q1
 pnpm run test:q1
 ```
+[![asciicast](https://asciinema.org/a/645734.svg)](https://asciinema.org/a/645734)
+
 
 ## level 2 
 ### Question 1
@@ -52,6 +61,8 @@ pnpm run test:q1
 hychan48-dont-get-volunteered 0 1 # Returns 3
 pytest ./levels/q2/tests/solutions_bfs_test.py
 ```
+[![asciicast](https://asciinema.org/a/645737.svg)](https://asciinema.org/a/645737)
+[![asciicast](https://asciinema.org/a/645739.svg)](https://asciinema.org/a/645739)
 
 ## Background
 * https://github.com/hychan48/google-foobar-2023-q4
@@ -63,9 +74,6 @@ pytest ./levels/q2/tests/solutions_bfs_test.py
 * I'm going to use Python 3.11.6, using basic syntax it should be backwards compatible with 2.7
   * Also, I have PyCharm installed already
 * TDD with PyTest
-
-
-
 
 # Quick Checklist
 - [ ] Documentation
@@ -113,6 +121,7 @@ ln -s $PWD/test/bats/bin/bats $HOME/.local/bin/bats # check
 which -a bats # check again
 whence bats
 ls -l $HOME/.local/bin/bats
+tree $HOME/.local/bin
 pipx ensurepath # will add $HOME/.local/bin to path
 ```
 ### Dev Container
@@ -142,6 +151,7 @@ conda env export > environment.full.yml
 # https://stackoverflow.com/questions/49638329/how-to-create-conda-env-with-both-name-and-path-specified
 ```
 
+
 ## GitHub Actions Workflows
 1. [ ] Build Wheel
   * [ ] Add PyTest after adding new features
@@ -149,102 +159,6 @@ conda env export > environment.full.yml
 
 ### Requirements.txt
 ```bash
-# Might need to be manually updated for now. Add to CI/CD
+# Manually updated for now. Add to CI/CD later
 poetry export -f requirements.txt --output requirements.txt
-poetry export -f requirements.txt --output requirements.txt --without dev
-# Warning: poetry-plugin-export will not be installed by default in a future version of Poetry.
-# revisit this. it gave a wrong requirements.txt
 ```
-
-# Dev Notes
-## Folder Structure
-* levels -> src
-* scripts
-* cli
-  * for Google Fire and Poetry to work properly
-```bash
-# interesting behavior on ps1
-poetry run hychan48-cake-is-not-a-lie --help
-# conda create --prefix ./envs --name google-foorbar-2023-q4 python=3.11,pipx,poetry # prefix or name
-
-conda create --prefix ./envs -y python=3.11,pipx,poetry
-conda create --prefix ./envs -y python=3.12,pipx,poetry # is the new default
-
-conda deactivate
-# conda create --prefix ./envs -y python=3.12,pipx,poetry
-```
-
-```bash
-# there's also some helpers
-# conda env remove -n google-foorbar-2023-q4
-# conda activate ./venv
-
-# newer method
-
-# pull
-# bats installs differently? weird
-# mostly for bats
-git pull --recurse-submodule
-
-## bats clones to test/ by default
-# 
-
-# first time
-# pipx / conda(mamba) / poetry
-
-git submodule add https://github.com/bats-core/bats-core.git test/bats
-git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
-git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
-git commit -m 'Add bats-support library'
-
-tree test/bats/bin
-mkdir -p ~/.local/bin
-rm ~/.local/bin/bats
-ln -s $PWD/test/bats/bin/bats ~/.local/bin/bats 
-ln -s $PWD/test/bats/bin/bats /usr/local/bin/bats
-ln -s ./test/bats/bin/bats /usr/local/bin/bats
-ls -l /usr/local/bin/bats
-bats
-export PATH=$PATH:~/.local/bin
-
-# git submodule add https://github.com/ztombol/bats-support test/test_helper/bats-support
-
-```
-
-
-```powershell
-# cygwin / windows 11
-pnpm i
-# haha didnt work:
-conda create -n foobar-py27 python=2.7
-conda create -n google-foorbar-2023-q4 python=3.11
-
-conda activate google-foorbar-2023-q4
-
-# update pipx
-pipx --version
-python -m pip install --user pipx
-python -m pipx ensurepath
-
-# poetry... too basic to need it... todo: move to other section
-# might not be needed after all...
-pipx install poetry
-poetry --version
-poetry init
-
-# poetry might not be needed after all...
-poetry add pytest --group dev
-#poetry shell
-# 3.11.4 vs 3.11.6... interesting
-```
-
-### Install pytest
-```bash
-conda activate google-foorbar-2023-q4
-python -m pip install pytest
-
-python -m pip install -r requirements.txt
-```
-## Appendix
-* [/api/v1/files/](https://foobar.withgoogle.com/api/v1/files/)
-

@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# for production
+# for production - used by smoke-test/pipx-local-cli i think
 # poetry on my dev is from pipx
 set -euxo pipefail
 poetry build
-
+# sudo poetry build
+# permission denied for some reason
 exit 0
 
 # ci/cd then use github actions to build and publish the wheel
