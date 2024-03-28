@@ -1,5 +1,9 @@
 # @hychan48/google-foobar-2023-q4
 ## Production
+### Replit - Try Me
+* [Replit - playground](https://replit.com/@jasonchan51/hychan48-google-foobar-2023-q4)
+
+### Pip / Pipx
 <!-- todo
 add some assets
 # pip install google-foobar-2023-q4
